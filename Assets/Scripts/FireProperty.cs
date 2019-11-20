@@ -17,7 +17,8 @@ public class FireProperty : MonoBehaviour
 
     float[] maxEmission;
     float[] maxLifeTime;
-
+    public TypeOfFlame typeOfFlames;
+    
 
     private void Start()
 	{

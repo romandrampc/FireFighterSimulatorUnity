@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+//using DG.Tweening;
 using Valve.VR.InteractionSystem;
 
 public enum BodyType
@@ -33,7 +33,7 @@ public class FollowHand : MonoBehaviour
 	public void SnapToHand(Hand hand)
 	{
 		currentHand = hand;
-		transform.DOMove(currentHand.transform.position, 0.25f);
-		transform.DORotate(currentHand.transform.eulerAngles + offsetVector, 0.25f).OnComplete(() => shouldFollow = true);
+		//transform.DOMove(currentHand.transform.position, 0.25f);
+		//transform.DORotate(currentHand.transform.eulerAngles + offsetVector, 0.25f).OnComplete(() => shouldFollow = true);
 	}
 }
