@@ -10,8 +10,6 @@ public enum TypeOfFlame
 
 public class GameController : MonoBehaviour
 {
-    
-
     public static GameController instance;
 
     private void Awake()

@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.firefightersimulatorunity.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "E:\\University\\Senior Project\\[SeniorPro]FireSimulator\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "FireFighterSimulatorUnity [Testing]"
+        }
+      }
+    }
+  ]
+}
