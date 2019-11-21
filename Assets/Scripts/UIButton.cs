@@ -8,16 +8,20 @@ public class UIButton : UIElement
     protected override void Awake()
     {
         base.Awake();
+
         
     }
 
     protected override void OnButtonClick()
     {
         base.OnButtonClick();
+
     }
 
-    private void PlaySound()
+    public void PlaySound(AudioClip tempclip)
     {
-
+        
+        Debug.Log("Test1");
+        SoundController.instanceSound.AudioPlay(tempclip);
     }
 }
