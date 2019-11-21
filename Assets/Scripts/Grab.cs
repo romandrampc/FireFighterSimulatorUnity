@@ -6,9 +6,13 @@ using Valve.VR.InteractionSystem;
 public class Grab : Throwable
 {
     private FireExtinguisher fireExtinguisher;
+    private Hand hand;
+    private bool isAttachHand;
+
     private void Start()
     {
         fireExtinguisher = this.gameObject.GetComponent<FireExtinguisher>();
+        isAttachHand = false;
     }
 
 
@@ -26,12 +30,12 @@ public class Grab : Throwable
 
                 // Attach this object to the hand
                 hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
+
+            isAttachHand = true;
             
         }
         else if (isGrabEnding)
         {
-
-            Debug.Log("re");
             // Detach this object from the hand
             hand.DetachObject(gameObject);
 
@@ -41,16 +45,14 @@ public class Grab : Throwable
             //// Restore position/rotation
             //transform.position = oldPosition;
             //transform.rotation = oldRotation;
+            isAttachHand = false;
         }
 
     }
 
-    protected override void HandAttachedUpdate(Hand hand)
+    private void Update()
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
-        bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-
-        if (hand.grabPinchAction.GetState(hand.handType))
+        if (isAttachHand && hand.grabPinchAction.GetState(hand.handType) )
         {
             Debug.Log("Trigger");
             fireExtinguisher.PlayParticle();
@@ -61,14 +63,32 @@ public class Grab : Throwable
             fireExtinguisher.StopParticle();
             fireExtinguisher.checkFire = false;
         }
-
-        if (interactable.attachedToHand == null && startingGrabType == GrabTypes.Grip)
-        {
-            // Detach this object from the hand
-            hand.DetachObject(gameObject);
-
-            // Call this to undo HoverLock
-            hand.HoverUnlock(interactable);
-        }
     }
+
+    //protected override void HandAttachedUpdate(Hand hand)
+    //{
+    //    GrabTypes startingGrabType = hand.GetGrabStarting();
+    //    bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+
+    //    if (hand.grabPinchAction.GetState(hand.handType))
+    //    {
+    //        Debug.Log("Trigger");
+    //        fireExtinguisher.PlayParticle();
+    //        fireExtinguisher.checkFire = true;
+    //    }
+    //    else
+    //    {
+    //        fireExtinguisher.StopParticle();
+    //        fireExtinguisher.checkFire = false;
+    //    }
+
+    //    if (interactable.attachedToHand == null && startingGrabType == GrabTypes.Grip)
+    //    {
+    //        // Detach this object from the hand
+    //        hand.DetachObject(gameObject);
+
+    //        // Call this to undo HoverLock
+    //        hand.HoverUnlock(interactable);
+    //    }
+    //}
 }

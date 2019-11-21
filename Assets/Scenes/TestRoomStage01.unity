@@ -5747,8 +5747,8 @@ MonoBehaviour:
   checkFire: 0
   typeOfExtinToDestroyFlame: 1
   damageFire: 20
-  radius: 3
-  range: 4
+  radius: 4
+  range: 6
 --- !u!114 &1412907429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7202,6 +7202,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.60000086
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475851328696737880, guid: 47428a505b577fa4588c18dbcafb5946,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475851329537053944, guid: 47428a505b577fa4588c18dbcafb5946,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47428a505b577fa4588c18dbcafb5946, type: 3}
