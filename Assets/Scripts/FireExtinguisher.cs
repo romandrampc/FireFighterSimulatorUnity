@@ -28,7 +28,10 @@ public class FireExtinguisher : MonoBehaviour
 
 	public void PlayParticle()
     {
-        foam.Play();
+        if (!foam.isPlaying)
+        {
+            foam.Play();
+        }
 		
 	}
 

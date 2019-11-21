@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 public class Grab : Throwable
 {
     private FireExtinguisher fireExtinguisher;
-    private Hand hand;
+    private Hand handGrap;
     private bool isAttachHand;
 
     private void Start()
@@ -31,6 +31,7 @@ public class Grab : Throwable
                 // Attach this object to the hand
                 hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
 
+            handGrap = hand;
             isAttachHand = true;
             
         }
@@ -45,6 +46,8 @@ public class Grab : Throwable
             //// Restore position/rotation
             //transform.position = oldPosition;
             //transform.rotation = oldRotation;
+
+            handGrap = null;
             isAttachHand = false;
         }
 
@@ -52,7 +55,7 @@ public class Grab : Throwable
 
     private void Update()
     {
-        if (isAttachHand && hand.grabPinchAction.GetState(hand.handType) )
+        if (isAttachHand && handGrap.grabPinchAction.GetState(handGrap.handType) )
         {
             Debug.Log("Trigger");
             fireExtinguisher.PlayParticle();
