@@ -5,13 +5,12 @@ using UnityEngine;
 public class FireExtinguisher : MonoBehaviour
 {
 	public ParticleSystem foam;
-	//[SerializeField] GameObject defaultModel;
-	//[SerializeField] GameObject grabModel;
-	[SerializeField] GameObject pivotNozzle;
-	//public Vector3 offsetVector;
-	//public bool attachToHand;
+	[SerializeField] GameObject defaultModel;
+	[SerializeField] GameObject grabModel;
+	[SerializeField] GameObject nozzle;
+	public Vector3 offsetVector;
+	public bool attachToHand;
 	public bool checkFire;
-    public TypeOfFlame typeOfExtinToDestroyFlame;
 	//
 	[SerializeField] float damageFire = 20.0f;
 	[SerializeField] float radius;
@@ -27,11 +26,8 @@ public class FireExtinguisher : MonoBehaviour
 	}
 
 	public void PlayParticle()
-    {
-        if (!foam.isPlaying)
-        {
-            foam.Play();
-        }
+	{
+		foam.Play();
 		
 	}
 
@@ -43,8 +39,8 @@ public class FireExtinguisher : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		startPoint = pivotNozzle.transform.position;
-		endPoint = pivotNozzle.transform.position + (pivotNozzle.transform.forward * range);
+		startPoint = nozzle.transform.position;
+		endPoint = nozzle.transform.position + (nozzle.transform.forward * range);
 
 		if(checkFire)
 		{
@@ -53,30 +49,26 @@ public class FireExtinguisher : MonoBehaviour
 			{
 				if (collider.CompareTag("Fire"))
 				{
-                    TypeOfFlame tempTypeOfFlame = collider.GetComponent<FireProperty>().typeOfFlames;
-                    if (typeOfExtinToDestroyFlame == tempTypeOfFlame)
-                    {
-                        collider.gameObject.SendMessage("DouseFire", damageFire);
-                    }
-                }
+					collider.gameObject.SendMessage("DouseFire", damageFire);
+				}
 			}
 		}
 	}
 	
 
-	//public void ChangeModel()
-	//{
-	//	grabModel.SetActive(false);
-	//	nozzle.SetActive(false);
-	//	defaultModel.SetActive(true);
-	//}
+	public void ChangeModel()
+	{
+		grabModel.SetActive(false);
+		nozzle.SetActive(false);
+		defaultModel.SetActive(true);
+	}
 
-	//public void SwapModel()
-	//{
-	//	grabModel.SetActive(true);
-	//	nozzle.SetActive(true);
-	//	defaultModel.SetActive(false);
-	//}
+	public void SwapModel()
+	{
+		grabModel.SetActive(true);
+		nozzle.SetActive(true);
+		defaultModel.SetActive(false);
+	}
 	
 
 	

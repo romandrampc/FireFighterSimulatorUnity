@@ -10,17 +10,19 @@ public enum TypeOfFlame
 
 public class GameController : MonoBehaviour
 {
-    public static GameController instanceGame;
+    
+
+    public static GameController instance;
 
     private void Awake()
     {
-        if (instanceGame != null && instanceGame != this)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            instanceGame = this;
+            instance = this;
         }
     }
 
