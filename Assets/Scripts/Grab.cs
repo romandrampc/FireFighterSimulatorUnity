@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
+
 public class Grab : Throwable
 {
     private FireExtinguisher fireExtinguisher;
