@@ -4,39 +4,64 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 
-public class Grab : Throwable
+public class Grab : MonoBehaviour
 {
+    [EnumFlags]
+    [Tooltip("The flags used to attach this object to the hand.")]
+    public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.TurnOnKinematic;
+    
+    [Tooltip("How fast must this object be moving to attach due to a trigger hold instead of a trigger press? (-1 to disable)")]
+    public float catchingSpeedThreshold = -1;
+
     private FireExtinguisher fireExtinguisher;
-    private Hand handGrap;
+    private Hand handGrab;
     private bool isAttachHand;
+    private bool canDetachFromhand;
+    protected bool attached = false;
+
+    [HideInInspector]
+    public Interactable interactable;
 
     private void Start()
     {
+        interactable = GetComponent<Interactable>();
+
         fireExtinguisher = this.gameObject.GetComponent<FireExtinguisher>();
         isAttachHand = false;
+        canDetachFromhand = false;
     }
 
-
-    protected override void HandHoverUpdate(Hand hand)
+    protected virtual void OnHandHoverBegin(Hand hand)
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
+        
+    }
+
+    protected virtual void HandHoverUpdate(Hand hand)
+    {
+        GrabTypes interactGrabType = hand.GetGrabStarting();
         bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
 
-        if (interactable.attachedToHand == null && startingGrabType == GrabTypes.Grip)
+        if (interactable.attachedToHand == null && interactGrabType == GrabTypes.Grip)
         {
-            
-                // Call this to continue receiving HandHoverUpdate messages,
-                // and prevent the hand from hovering over anything else
-                hand.HoverLock(interactable);
 
-                // Attach this object to the hand
-                hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
+            // Call this to continue receiving HandHoverUpdate messages,
+            // and prevent the hand from hovering over anything else
+            hand.HoverLock(interactable);
 
-            handGrap = hand;
+            // Attach this object to the hand
+            hand.AttachObject(gameObject, interactGrabType, attachmentFlags);
+
+            handGrab = hand;
             isAttachHand = true;
-            
+
         }
-        else if (isGrabEnding)
+
+        if (isGrabEnding && isAttachHand)
+        {
+            canDetachFromhand = true;
+        }
+
+         if (canDetachFromhand && interactGrabType == GrabTypes.Grip)
         {
             // Detach this object from the hand
             hand.DetachObject(gameObject);
@@ -48,15 +73,16 @@ public class Grab : Throwable
             //transform.position = oldPosition;
             //transform.rotation = oldRotation;
 
-            handGrap = null;
+            handGrab = null;
             isAttachHand = false;
+            canDetachFromhand = false;
         }
 
     }
 
     private void Update()
     {
-        if (isAttachHand && handGrap.grabPinchAction.GetState(handGrap.handType) )
+        if (isAttachHand && handGrab.grabPinchAction.GetState(handGrab.handType) )
         {
             Debug.Log("Trigger");
             fireExtinguisher.PlayParticle();

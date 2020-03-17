@@ -7,7 +7,7 @@ public class FireExtinguisher : MonoBehaviour
 	public ParticleSystem foam;
 	//[SerializeField] GameObject defaultModel;
 	//[SerializeField] GameObject grabModel;
-	[SerializeField] GameObject pivotNozzle;
+	[SerializeField] GameObject pivotHose;
 	//public Vector3 offsetVector;
 	//public bool attachToHand;
 	public bool checkFire;
@@ -43,8 +43,8 @@ public class FireExtinguisher : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		startPoint = pivotNozzle.transform.position;
-		endPoint = pivotNozzle.transform.position + (pivotNozzle.transform.forward * range);
+		startPoint = pivotHose.transform.position;
+		endPoint = pivotHose.transform.position + (pivotHose.transform.forward * range);
 
 		if(checkFire)
 		{
