@@ -13,6 +13,9 @@ public class Grab : MonoBehaviour
     [Tooltip("How fast must this object be moving to attach due to a trigger hold instead of a trigger press? (-1 to disable)")]
     public float catchingSpeedThreshold = -1;
 
+    [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
+    public Transform gripOffset;
+
     private FireExtinguisher fireExtinguisher;
     private Hand handGrab;
     private bool isAttachHand;
@@ -33,13 +36,15 @@ public class Grab : MonoBehaviour
 
     protected virtual void OnHandHoverBegin(Hand hand)
     {
-        
+       
+
     }
 
     protected virtual void HandHoverUpdate(Hand hand)
     {
         GrabTypes interactGrabType = hand.GetGrabStarting();
         bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+
 
         if (interactable.attachedToHand == null && interactGrabType == GrabTypes.Grip)
         {
@@ -49,7 +54,7 @@ public class Grab : MonoBehaviour
             hand.HoverLock(interactable);
 
             // Attach this object to the hand
-            hand.AttachObject(gameObject, interactGrabType, attachmentFlags);
+            hand.AttachObject(gameObject, interactGrabType, attachmentFlags,gripOffset);
 
             handGrab = hand;
             isAttachHand = true;
