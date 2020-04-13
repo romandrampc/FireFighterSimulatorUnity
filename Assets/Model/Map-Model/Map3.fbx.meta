@@ -38,7 +38,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: StairFloor
-    second: {fileID: 2100000, guid: 5535e2f1eac7fc54c96142ff4111943c, type: 2}
+    second: {fileID: 2100000, guid: cf0f71b3957df9a4ca69f03dc772365a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -102,7 +102,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 100
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
