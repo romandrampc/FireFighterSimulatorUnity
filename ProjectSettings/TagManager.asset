@@ -6,6 +6,13 @@ TagManager:
   tags:
   - FxTemporaire
   - projectile
+  - Fire
+  - ElevatorButtonOpen
+  - ElevatorNumericButton
+  - ElevatorGoButton
+  - Elevator
+  - Door
+  - SmashObject
   layers:
   - Default
   - TransparentFX

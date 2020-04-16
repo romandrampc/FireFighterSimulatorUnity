@@ -8,8 +8,6 @@ public class UIButton : UIElement
     protected override void Awake()
     {
         base.Awake();
-
-        
     }
 
     protected override void OnButtonClick()
