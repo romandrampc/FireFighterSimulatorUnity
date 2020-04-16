@@ -18,8 +18,6 @@ public class UIButton : UIElement
 
     public void PlaySound(AudioClip tempclip)
     {
-        
-        Debug.Log("Test1");
         SoundController.instanceSound.AudioPlay(tempclip);
     }
 }
