@@ -28,6 +28,12 @@ public class GameController : MonoBehaviour
     ModeTrainingController modeTraining;
     #endregion
 
+    #region Player
+    private float playerHeight = 0.0f;
+
+    internal float PlayerHeight { get => playerHeight; set => playerHeight = value; }
+    #endregion
+
     private void Awake()
     {
         if (instanceGame != null && instanceGame != this)

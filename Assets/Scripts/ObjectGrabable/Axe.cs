@@ -18,17 +18,14 @@ public class Axe : MonoBehaviour
     public Interactable interactable;
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
-    [SerializeField] Transform axeOffset;
-    [SerializeField] Transform pickAxeOffset;
-    [SerializeField] Transform buttAxeOffset;
+    [SerializeField] internal Transform axeOffset;
+    [SerializeField] internal Transform pickAxeOffset;
+    [SerializeField] internal Transform buttAxeOffset;
     
-    private Hand handGrab;
-    private Player player;
-    private Transform playerHmdTranfrom;
-    private float playerHeight = 0.0f;
-    private bool canDetachFromhand;
+    internal Hand handGrab;
+    internal bool canDetachFromhand;
 
-    protected bool isAttachHand;
+    internal bool isAttachHand;
     protected bool attached = false;
     
     #endregion
@@ -139,14 +136,6 @@ public class Axe : MonoBehaviour
 
             handGrab = hand;
             isAttachHand = true;
-
-            // Get Player Scripts to get height player
-            player = hand.GetComponentInParent<Player>();
-            playerHmdTranfrom = player.hmdTransform;
-            if (playerHeight <= playerHmdTranfrom.position.y)
-            {
-                playerHeight = playerHmdTranfrom.position.y;
-            }
         }
 
         if (isGrabEnding && isAttachHand)
@@ -162,17 +151,21 @@ public class Axe : MonoBehaviour
             // Call this to undo HoverLock
             hand.HoverUnlock(interactable);
 
-            //// Restore position/rotation
-            //transform.position = oldPosition;
-            //transform.rotation = oldRotation;
-
             handGrab = null;
             isAttachHand = false;
             canDetachFromhand = false;
+            
+            Vector3 startPointSphere = axeOffset.transform.position;
+            Collider[] colliders = Physics.OverlapSphere(startPointSphere, radiusPickAxe * 2);
+            foreach (Collider collider in colliders)
+            {
+                if (collider.CompareTag("Player"))
+                {
+                    collider.SendMessage("PickUp", this.gameObject, SendMessageOptions.DontRequireReceiver);
+                    this.gameObject.SetActive(false);
+                }
+            }
 
-            // Set null when detach from hand
-            player = null;
-            playerHmdTranfrom = null;
         }
 
     }
