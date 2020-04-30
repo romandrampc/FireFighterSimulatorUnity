@@ -39,6 +39,7 @@ public class Axe : MonoBehaviour
     Vector3 StartPointButtAxe = Vector3.zero;
     Vector3 StartPointPickAxe = Vector3.zero;
     bool checkToDraw = false;
+    internal bool isInventory = false;
 
     // Start is called before the first frame update
     void Start()
@@ -148,12 +149,6 @@ public class Axe : MonoBehaviour
 
         if (canDetachFromhand && interactGrabType == GrabTypes.Grip)
         {
-            // Detach this object from the hand
-            hand.DetachObject(gameObject);
-
-            // Call this to undo HoverLock
-            hand.HoverUnlock(interactable);
-
             handGrab = null;
             isAttachHand = false;
             canDetachFromhand = false;
@@ -164,11 +159,20 @@ public class Axe : MonoBehaviour
             {
                 if (collider.CompareTag("Player"))
                 {
+                    isInventory = true;
                     collider.SendMessage("PickUp", this.gameObject, SendMessageOptions.DontRequireReceiver);
-                    this.gameObject.SetActive(false);
+                    gameObject.SetActive(false);
                 }
             }
 
+            if (!isInventory)
+            {
+                // Detach this object from the hand
+                hand.DetachObject(gameObject);
+
+                // Call this to undo HoverLock
+                hand.HoverUnlock(interactable);
+            }
         }
 
     }

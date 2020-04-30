@@ -23,7 +23,7 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = this.gameObject.GetComponent<Player>();
+        player = this.gameObject.GetComponentInParent<Player>();
         playerHmdTranfrom = player.hmdTransform;
         playerHeight = playerHmdTranfrom.position.y;
 
@@ -35,6 +35,7 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        offsetBoxCollider = this.gameObject.transform.position;
         boxInventory.center = new Vector3(playerHmdTranfrom.position.x - offsetBoxCollider.x, playerHeight / 2.0f, playerHmdTranfrom.position.z - offsetBoxCollider.z);
 
     }
@@ -56,15 +57,17 @@ public class PlayerInventory : MonoBehaviour
 
             // Call this to continue receiving HandHoverUpdate messages,
             // and prevent the hand from hovering over anything else
-            hand.HoverLock(axeScript.interactable);
+            //hand.HoverLock(axeScript.interactable);
 
             // Attach axe to the hand
-            hand.AttachObject(axeObject.gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
+            //hand.AttachObject(axeObject.gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
 
             axeScript.handGrab = hand;
             axeScript.isAttachHand = true;
             axeScript.canDetachFromhand = true;
+            axeScript.isInventory = false;
         }
     }
+    
 
 }
