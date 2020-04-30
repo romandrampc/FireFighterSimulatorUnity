@@ -14,7 +14,6 @@ public class Axe : MonoBehaviour
     [Tooltip("How fast must this object be moving to attach due to a trigger hold instead of a trigger press? (-1 to disable)")]
     public float catchingSpeedThreshold = -1;
     
-    [HideInInspector]
     public Interactable interactable;
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
@@ -126,7 +125,6 @@ public class Axe : MonoBehaviour
     {
         GrabTypes interactGrabType = hand.GetGrabStarting();
         bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-        Debug.Log("Axe In");
 
         if (interactable.attachedToHand == null && interactGrabType == GrabTypes.Grip)
         {
@@ -148,10 +146,10 @@ public class Axe : MonoBehaviour
 
         if (canDetachFromhand && interactGrabType == GrabTypes.Grip)
         {
-            Debug.Log("Axe DE");
             handGrab = null;
             isAttachHand = false;
             canDetachFromhand = false;
+
             
             Vector3 startPointSphere = axeOffset.transform.position;
             Collider[] colliders = Physics.OverlapSphere(startPointSphere, radiusPickAxe * 2);

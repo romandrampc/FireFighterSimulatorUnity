@@ -45,23 +45,19 @@ public class PlayerInventory : MonoBehaviour
 
     protected virtual void HandHoverUpdate(Hand hand)
     {
-        Debug.Log("Hand");
         GrabTypes interactGrabType = hand.GetGrabStarting();
         if (interactGrabType == GrabTypes.Grip )
         {
             GameObject axeCreate = GameObject.Instantiate<GameObject>(axePrefab);
-            axeCreate.transform.position = hand.transform.position;
-            axeCreate.transform.rotation = hand.transform.rotation;
             axeScript = axeCreate.GetComponent<Axe>();
+            Interactable axeInteractable = axeCreate.GetComponent<Interactable>();
             
-            //hand.HoverLock(axeScript.interactable);
-            //hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
+            hand.HoverLock(axeInteractable);
+            hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
 
-            //axeScript.handGrab = hand;
-            //axeScript.isAttachHand = true;
-            //axeScript.canDetachFromhand = true;
-            //axeScript.isInventory = false;
-
+            axeScript.handGrab = hand;
+            axeScript.isAttachHand = true;
+            axeScript.canDetachFromhand = true;
         }
     }
     
