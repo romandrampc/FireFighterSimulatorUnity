@@ -112,6 +112,9 @@ public class Axe : MonoBehaviour
             Gizmos.color = new Color(1, 0, 0, 0.5f);
             Gizmos.DrawSphere(StartPointButtAxe, radiusButtAxe);
         }
+        //Gizmos.color = new Color(3, 4, 4, 0.5f);
+        //Gizmos.DrawSphere(StartPointPickAxe, radiusPickAxe);
+        
     }
 
     protected virtual void OnHandHoverBegin(Hand hand)

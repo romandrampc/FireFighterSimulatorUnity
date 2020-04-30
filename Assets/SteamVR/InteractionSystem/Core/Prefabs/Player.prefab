@@ -219,9 +219,11 @@ GameObject:
   m_Component:
   - component: {fileID: 447954}
   - component: {fileID: 11465950}
+  - component: {fileID: 1641655262}
+  - component: {fileID: 1641655261}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,6 +277,31 @@ MonoBehaviour:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
   allowToggleTo2D: 1
+--- !u!65 &1641655262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.35, z: 0.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1641655261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72ff618daf47b646874956a2c56e875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &109154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initializeSteamVROnAwake: 1
-  doNotDestroy: 1
+  doNotDestroy: 0
   steamvr_render: {fileID: 0}
 --- !u!114 &11479638
 MonoBehaviour:
