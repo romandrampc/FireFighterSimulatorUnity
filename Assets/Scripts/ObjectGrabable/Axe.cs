@@ -23,9 +23,9 @@ public class Axe : MonoBehaviour
     [SerializeField] internal Transform buttAxeOffset;
     
     internal Hand handGrab;
-    internal bool canDetachFromhand;
+    internal bool canDetachFromhand = false;
 
-    internal bool isAttachHand;
+    internal bool isAttachHand = false;
     protected bool attached = false;
     
     #endregion
@@ -45,10 +45,8 @@ public class Axe : MonoBehaviour
     void Start()
     {
         #region GrabableStart
-        interactable = GetComponent<Interactable>();
 
-        isAttachHand = false;
-        canDetachFromhand = false;
+        interactable = GetComponent<Interactable>();
         #endregion
     }
 
@@ -128,6 +126,7 @@ public class Axe : MonoBehaviour
     {
         GrabTypes interactGrabType = hand.GetGrabStarting();
         bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+        Debug.Log("Axe In");
 
         if (interactable.attachedToHand == null && interactGrabType == GrabTypes.Grip)
         {
@@ -149,6 +148,7 @@ public class Axe : MonoBehaviour
 
         if (canDetachFromhand && interactGrabType == GrabTypes.Grip)
         {
+            Debug.Log("Axe DE");
             handGrab = null;
             isAttachHand = false;
             canDetachFromhand = false;
@@ -160,8 +160,13 @@ public class Axe : MonoBehaviour
                 if (collider.CompareTag("Player"))
                 {
                     isInventory = true;
-                    collider.SendMessage("PickUp", this.gameObject, SendMessageOptions.DontRequireReceiver);
-                    gameObject.SetActive(false);
+                    //gameObject.SetActive(false);
+
+                    hand.DetachObject(gameObject);
+
+                    hand.HoverUnlock(interactable);
+
+                    Destroy(this.gameObject);
                 }
             }
 

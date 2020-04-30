@@ -12,8 +12,10 @@ public class PlayerInventory : MonoBehaviour
     private Vector3 offsetBoxCollider;
     private BoxCollider boxInventory;
 
-    private GameObject axeObject;
+    [SerializeField] GameObject axePrefab;
     private Axe axeScript;
+
+    Interactable interactable;
 
     private void Awake()
     {
@@ -24,10 +26,11 @@ public class PlayerInventory : MonoBehaviour
     void Start()
     {
         player = this.gameObject.GetComponentInParent<Player>();
+        interactable = GetComponent<Interactable>();
         playerHmdTranfrom = player.hmdTransform;
         playerHeight = playerHmdTranfrom.position.y;
 
-        offsetBoxCollider = this.gameObject.transform.position;
+        offsetBoxCollider = player.transform.position;
         boxInventory = this.gameObject.GetComponent<BoxCollider>();
         boxInventory.center = new Vector3(0.0f, playerHeight / 2.0f, 0.0f);
     }
@@ -39,33 +42,26 @@ public class PlayerInventory : MonoBehaviour
         boxInventory.center = new Vector3(playerHmdTranfrom.position.x - offsetBoxCollider.x, playerHeight / 2.0f, playerHmdTranfrom.position.z - offsetBoxCollider.z);
 
     }
-    
-    void PickUp(GameObject tempAxe)
-    {
-        axeObject = tempAxe;
-        axeScript = axeObject.GetComponent<Axe>();
-    }
 
     protected virtual void HandHoverUpdate(Hand hand)
     {
         Debug.Log("Hand");
         GrabTypes interactGrabType = hand.GetGrabStarting();
-        if (interactGrabType == GrabTypes.Grip || Input.GetKey(KeyCode.R))
+        if (interactGrabType == GrabTypes.Grip )
         {
-            //set axe active
-            axeObject.gameObject.SetActive(true);
-
-            // Call this to continue receiving HandHoverUpdate messages,
-            // and prevent the hand from hovering over anything else
+            GameObject axeCreate = GameObject.Instantiate<GameObject>(axePrefab);
+            axeCreate.transform.position = hand.transform.position;
+            axeCreate.transform.rotation = hand.transform.rotation;
+            axeScript = axeCreate.GetComponent<Axe>();
+            
             //hand.HoverLock(axeScript.interactable);
+            //hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
 
-            // Attach axe to the hand
-            //hand.AttachObject(axeObject.gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
+            //axeScript.handGrab = hand;
+            //axeScript.isAttachHand = true;
+            //axeScript.canDetachFromhand = true;
+            //axeScript.isInventory = false;
 
-            axeScript.handGrab = hand;
-            axeScript.isAttachHand = true;
-            axeScript.canDetachFromhand = true;
-            axeScript.isInventory = false;
         }
     }
     
