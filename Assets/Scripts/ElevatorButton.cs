@@ -14,13 +14,7 @@ public class ElevatorButton : MonoBehaviour
     {
         wasPlayAnimation = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     protected virtual void HandHoverUpdate(Hand hand)
     {
         OnButtonDown();
