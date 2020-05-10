@@ -55,7 +55,7 @@ public class Axe : MonoBehaviour
         if (isAttachHand && (handGrab.grabPinchAction.GetState(handGrab.handType) || Input.GetKey(KeyCode.R)))
         {
             gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            gameObject.SendMessage("SmashWithButt", SendMessageOptions.DontRequireReceiver);
+            SmashWithButt();
            
         }
         else
@@ -65,7 +65,7 @@ public class Axe : MonoBehaviour
 
         if (isAttachHand)
         {
-            gameObject.SendMessage("SmashWithPick", SendMessageOptions.DontRequireReceiver);
+            SmashWithPick();
         }
         
     }
