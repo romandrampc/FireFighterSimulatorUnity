@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ff618daf47b646874956a2c56e875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axePrefab: {fileID: 456780571104342243, guid: 286a7fe68365d1f4abf56620d089bdfc,
+  axePrefab: {fileID: 8696491118519237301, guid: 4214679d0deefeb4895f28a859d7f876,
     type: 3}
 --- !u!114 &2038338205
 MonoBehaviour:
