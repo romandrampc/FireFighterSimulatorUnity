@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 2038338204}
   - component: {fileID: 2038338203}
   - component: {fileID: 2038338205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PivotInventory
   m_TagString: Player
   m_Icon: {fileID: 0}
