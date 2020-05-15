@@ -14,6 +14,7 @@ public class Axe : MonoBehaviour
     [Tooltip("How fast must this object be moving to attach due to a trigger hold instead of a trigger press? (-1 to disable)")]
     public float catchingSpeedThreshold = -1;
     
+    [HideInInspector]
     public Interactable interactable;
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
@@ -159,7 +160,7 @@ public class Axe : MonoBehaviour
 
             
             Vector3 startPointSphere = axeOffset.transform.position;
-            Collider[] colliders = Physics.OverlapSphere(startPointSphere, radiusPickAxe * 2);
+            Collider[] colliders = Physics.OverlapSphere(startPointSphere, radiusPickAxe * 3);
             foreach (Collider collider in colliders)
             {
                 if (collider.CompareTag("Player"))
@@ -167,8 +168,13 @@ public class Axe : MonoBehaviour
                     isInventory = true;
                     //gameObject.SetActive(false);
 
-                    hand.DetachObject(gameObject);
+                    PlayerInventory playerInven = collider.gameObject.GetComponent<PlayerInventory>();
+                    playerInven.axeCount++;
 
+                    Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+                    rigidbody.isKinematic = false;
+
+                    hand.DetachObject(gameObject);
                     hand.HoverUnlock(interactable);
 
                     Destroy(this.gameObject);
@@ -182,7 +188,12 @@ public class Axe : MonoBehaviour
 
                 // Call this to undo HoverLock
                 hand.HoverUnlock(interactable);
+
+                Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+                rigidbody.isKinematic = false;
             }
+
+            
         }
 
     }

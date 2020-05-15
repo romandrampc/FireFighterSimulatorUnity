@@ -14,6 +14,7 @@ public class PlayerInventory : MonoBehaviour
 
     [SerializeField] GameObject axePrefab;
     private Axe axeScript;
+    internal int axeCount;
 
     Interactable interactable;
 
@@ -40,7 +41,7 @@ public class PlayerInventory : MonoBehaviour
     {
         offsetBoxCollider = this.gameObject.transform.position;
         boxInventory.center = new Vector3(playerHmdTranfrom.position.x - offsetBoxCollider.x, playerHeight / 2.0f, playerHmdTranfrom.position.z - offsetBoxCollider.z);
-
+        gameObject.transform.position = new Vector3(playerHmdTranfrom.position.x, 0, playerHmdTranfrom.position.z);
     }
 
     protected virtual void HandHoverUpdate(Hand hand)
@@ -48,16 +49,21 @@ public class PlayerInventory : MonoBehaviour
         GrabTypes interactGrabType = hand.GetGrabStarting();
         if (interactGrabType == GrabTypes.Grip )
         {
-            GameObject axeCreate = GameObject.Instantiate<GameObject>(axePrefab);
-            axeScript = axeCreate.GetComponent<Axe>();
-            Interactable axeInteractable = axeCreate.GetComponent<Interactable>();
-            
-            hand.HoverLock(axeInteractable);
-            hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
+            if (axeCount > 0)
+            {
+                GameObject axeCreate = GameObject.Instantiate<GameObject>(axePrefab);
+                axeScript = axeCreate.GetComponent<Axe>();
+                Interactable axeInteractable = axeCreate.GetComponent<Interactable>();
 
-            axeScript.handGrab = hand;
-            axeScript.isAttachHand = true;
-            axeScript.canDetachFromhand = true;
+                hand.HoverLock(axeInteractable);
+                hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
+
+                axeScript.handGrab = hand;
+                axeScript.isAttachHand = true;
+                axeScript.canDetachFromhand = true;
+
+                axeCount--;
+            }
         }
     }
     
