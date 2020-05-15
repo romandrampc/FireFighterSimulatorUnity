@@ -40,6 +40,7 @@ public class Axe : MonoBehaviour
     Vector3 StartPointPickAxe = Vector3.zero;
     bool checkToDraw = false;
     internal bool isInventory = false;
+    bool canUseButt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,19 +54,23 @@ public class Axe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isAttachHand && (handGrab.grabPinchAction.GetState(handGrab.handType) || Input.GetKey(KeyCode.R)))
+        if(isAttachHand && (handGrab.grabPinchAction.GetStateDown(handGrab.handType) || Input.GetKey(KeyCode.R)))
         {
-            axePivot.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            SmashWithButt();
-           
+            axePivot.transform.Rotate(new Vector3(axePivot.transform.rotation.x, 180, axePivot.transform.rotation.z));
+            canUseButt = true;
         }
-        else
+        else if (isAttachHand && (handGrab.grabPinchAction.GetStateUp(handGrab.handType)))
         {
-            //axePivot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            axePivot.transform.Rotate(new Vector3(axePivot.transform.rotation.x, 180, axePivot.transform.rotation.z));
+            canUseButt = false;
             checkToDraw = false;
         }
 
-        if (isAttachHand)
+        if (canUseButt)
+        {
+            SmashWithButt();
+        }
+        else if (isAttachHand)
         {
             SmashWithPick();
         }
@@ -146,7 +151,7 @@ public class Axe : MonoBehaviour
             canDetachFromhand = true;
         }
 
-        if (canDetachFromhand && interactGrabType == GrabTypes.Grip)
+        if (canDetachFromhand && interactGrabType == GrabTypes.Grip && !canUseButt)
         {
             handGrab = null;
             isAttachHand = false;
