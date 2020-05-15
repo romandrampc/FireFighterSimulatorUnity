@@ -54,12 +54,13 @@ public class Axe : MonoBehaviour
     {
         if (isAttachHand && (handGrab.grabPinchAction.GetState(handGrab.handType) || Input.GetKey(KeyCode.R)))
         {
-            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            axeOffset.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             SmashWithButt();
            
         }
         else
         {
+            axeOffset.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             checkToDraw = false;
         }
 
