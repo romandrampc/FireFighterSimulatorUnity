@@ -3343,7 +3343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modeGame: 0
   mainMenuSceneName: 
-  playSceneName: 
+  playSceneName: TestRoomStage01
 --- !u!114 &708139563
 MonoBehaviour:
   m_ObjectHideFlags: 0
