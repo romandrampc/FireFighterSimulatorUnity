@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public enum TypeOfFlame
 {
@@ -14,7 +16,8 @@ public enum TypeOfFlame
 public enum ModeGame
 {
     Survivor,
-    Training
+    Training,
+    MainMenu
 }
 
 public class GameController : MonoBehaviour
@@ -34,6 +37,14 @@ public class GameController : MonoBehaviour
     internal float PlayerHeight { get => playerHeight; set => playerHeight = value; }
     #endregion
 
+    [Header("Scene Name")]
+    [SerializeField] string mainMenuSceneName;
+    [SerializeField] string playSceneName;
+
+    string tempStr;
+
+    bool wasEnter = false;
+
     private void Awake()
     {
         if (instanceGame != null && instanceGame != this)
@@ -51,28 +62,54 @@ public class GameController : MonoBehaviour
     {
         modeSurvivor = ModeSurvivorController.instanceGameModeSurvivor;
         modeTraining = ModeTrainingController.instanceGameModeTraining;
+        
     }
 
     private void CheckStage()
     {
-        // Check To Set Survivor Control Active
-        if (modeGame == ModeGame.Survivor)
+        if (SceneManager.GetActiveScene().name == mainMenuSceneName)
         {
-            modeSurvivor.enabled = true;
-        }
-        else
-        {
-            modeSurvivor.enabled = false;
+            modeGame = ModeGame.MainMenu;
         }
 
-        //Check To Set Training Control Active
-        if (modeGame == ModeGame.Training)
+        if (modeGame == ModeGame.MainMenu)
         {
-            modeTraining.enabled = true;
-        }
-        else
-        {
+            modeSurvivor.enabled = false;
             modeTraining.enabled = false;
+            wasEnter = false;
+        }
+
+        if (SceneManager.GetActiveScene().name == playSceneName)
+        {
+            // Check To Set Survivor Control Active
+            if (modeGame == ModeGame.Survivor)
+            {
+                modeSurvivor.enabled = true;
+                if (!wasEnter)
+                {
+                    Teleport.onTeleport.AddListener(OnTeleport);
+                    wasEnter = true;
+                }
+            }
+            else
+            {
+                modeSurvivor.enabled = false;
+            }
+
+            //Check To Set Training Control Active
+            if (modeGame == ModeGame.Training)
+            {
+                modeTraining.enabled = true;
+                if (!wasEnter)
+                {
+                    Teleport.onTeleport.AddListener(OnTeleport);
+                    wasEnter = true;
+                }
+            }
+            else
+            {
+                modeTraining.enabled = false;
+            }
         }
     }
 
@@ -80,5 +117,15 @@ public class GameController : MonoBehaviour
     void Update()
     {
         CheckStage();
+    }
+
+    void OnTeleport(string tempTeleAreaName)
+    {
+        Debug.Log("Tele Area :" + tempTeleAreaName);
+    }
+
+    public void OnGameOver()
+    {
+        Debug.Log("GameOver");
     }
 }

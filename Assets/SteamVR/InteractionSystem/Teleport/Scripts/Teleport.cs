@@ -10,6 +10,10 @@ using System.Collections;
 
 namespace Valve.VR.InteractionSystem
 {
+    public class OnTeleportEvent : UnityEvent<string>
+    {
+
+    }
 	//-------------------------------------------------------------------------
 	public class Teleport : MonoBehaviour
     {
@@ -123,6 +127,7 @@ namespace Valve.VR.InteractionSystem
 		public static SteamVR_Events.Event< TeleportMarkerBase > PlayerPre = new SteamVR_Events.Event< TeleportMarkerBase >();
 		public static SteamVR_Events.Action< TeleportMarkerBase > PlayerPreAction( UnityAction< TeleportMarkerBase > action ) { return new SteamVR_Events.Action< TeleportMarkerBase >( PlayerPre, action ); }
 
+        public static OnTeleportEvent onTeleport;
 		//-------------------------------------------------
 		private static Teleport _instance;
 		public static Teleport instance
@@ -902,6 +907,7 @@ namespace Valve.VR.InteractionSystem
 				teleportingToMarker.TeleportPlayer( pointedAtPosition );
 			}
 
+            onTeleport.Invoke(teleportArea.name);
 			Teleport.Player.Send( pointedAtTeleportMarker );
 		}
 
