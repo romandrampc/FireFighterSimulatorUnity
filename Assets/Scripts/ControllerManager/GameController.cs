@@ -37,6 +37,10 @@ public class GameController : MonoBehaviour
     internal float PlayerHeight { get => playerHeight; set => playerHeight = value; }
     #endregion
 
+    #region SteamVR
+    Teleport teleport;
+    #endregion
+
     [Header("Scene Name")]
     [SerializeField] string mainMenuSceneName;
     [SerializeField] string playSceneName;
@@ -81,13 +85,14 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == playSceneName)
         {
+            teleport = Teleport.instance;
             // Check To Set Survivor Control Active
             if (modeGame == ModeGame.Survivor)
             {
                 modeSurvivor.enabled = true;
                 if (!wasEnter)
                 {
-                    //Teleport.onTeleport.AddListener(OnTeleport);
+                    teleport.onTeleport.AddListener(OnTeleport);
                     wasEnter = true;
                 }
             }
@@ -102,7 +107,7 @@ public class GameController : MonoBehaviour
                 modeTraining.enabled = true;
                 if (!wasEnter)
                 {
-                    Teleport.onTeleport.AddListener(OnTeleport);
+                    teleport.onTeleport.AddListener(OnTeleport);
                     wasEnter = true;
                 }
             }
