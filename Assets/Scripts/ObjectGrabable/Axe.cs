@@ -18,6 +18,7 @@ public class Axe : MonoBehaviour
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
     [SerializeField] internal Transform axeOffset;
+    [SerializeField] internal Transform axePivot;
     [SerializeField] internal Transform pickAxeOffset;
     [SerializeField] internal Transform buttAxeOffset;
     
@@ -54,13 +55,13 @@ public class Axe : MonoBehaviour
     {
         if (isAttachHand && (handGrab.grabPinchAction.GetState(handGrab.handType) || Input.GetKey(KeyCode.R)))
         {
-            axeOffset.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            axePivot.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             SmashWithButt();
            
         }
         else
         {
-            axeOffset.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            //axePivot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             checkToDraw = false;
         }
 

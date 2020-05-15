@@ -87,7 +87,7 @@ public class GameController : MonoBehaviour
                 modeSurvivor.enabled = true;
                 if (!wasEnter)
                 {
-                    Teleport.onTeleport.AddListener(OnTeleport);
+                    //Teleport.onTeleport.AddListener(OnTeleport);
                     wasEnter = true;
                 }
             }
