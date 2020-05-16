@@ -3338,6 +3338,7 @@ GameObject:
   - component: {fileID: 708139562}
   - component: {fileID: 708139564}
   - component: {fileID: 708139563}
+  - component: {fileID: 708139565}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3374,6 +3375,7 @@ MonoBehaviour:
   modeGame: 0
   mainMenuSceneName: 
   playSceneName: TestRoomStage01
+  fireExtinSceneName: 
 --- !u!114 &708139563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3396,6 +3398,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7913a14ac30b0b246adfae393a3165d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &708139565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708139560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5269442c6c19a6e45a79307fe0855e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &708141678
@@ -7534,12 +7548,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809677606115652675, guid: af4ca66cb24034640b979bb7cae5a35f,
         type: 3}
-      propertyPath: onMaxAngle.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: onMaxAngle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 417291175}
     - target: {fileID: 4809677606115652675, guid: af4ca66cb24034640b979bb7cae5a35f,
         type: 3}
-      propertyPath: onMaxAngle.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      propertyPath: onMaxAngle.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 417291174}
     m_RemovedComponents: []

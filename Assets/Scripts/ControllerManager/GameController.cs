@@ -17,7 +17,8 @@ public enum ModeGame
 {
     Survivor,
     Training,
-    MainMenu
+    MainMenu,
+    FireExtin
 }
 
 public class GameController : MonoBehaviour
@@ -29,6 +30,8 @@ public class GameController : MonoBehaviour
 
     ModeSurvivorController modeSurvivor;
     ModeTrainingController modeTraining;
+    ModeFireExtinController modeFireExtin;
+
     #endregion
 
     #region Player
@@ -44,6 +47,7 @@ public class GameController : MonoBehaviour
     [Header("Scene Name")]
     [SerializeField] string mainMenuSceneName;
     [SerializeField] string playSceneName;
+    [SerializeField] string fireExtinSceneName;
 
     string tempStr;
 
@@ -66,7 +70,7 @@ public class GameController : MonoBehaviour
     {
         modeSurvivor = ModeSurvivorController.instanceGameModeSurvivor;
         modeTraining = ModeTrainingController.instanceGameModeTraining;
-        
+        modeFireExtin = ModeFireExtinController.instanceGameModeTrainFireExtinguisher;
     }
 
     private void CheckStage()
@@ -80,6 +84,7 @@ public class GameController : MonoBehaviour
         {
             modeSurvivor.enabled = false;
             modeTraining.enabled = false;
+            modeFireExtin.enabled = false;
             wasEnter = false;
         }
 
@@ -114,6 +119,13 @@ public class GameController : MonoBehaviour
             else
             {
                 modeTraining.enabled = false;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == fireExtinSceneName)
+        {
+            if (modeGame == ModeGame.FireExtin)
+            {
+                modeFireExtin.enabled = true;
             }
         }
     }

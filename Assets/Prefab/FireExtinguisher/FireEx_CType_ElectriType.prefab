@@ -141,9 +141,9 @@ MonoBehaviour:
   foam: {fileID: 56999497641891399}
   pivotHose: {fileID: 6418852969896190381}
   typeOfExtinToDestroyFlame: 2
-  damageFire: 20
-  radius: 4
-  range: 6
+  damageFire: 15
+  radius: 3
+  range: 7
 --- !u!54 &6418852970348578405
 Rigidbody:
   m_ObjectHideFlags: 0

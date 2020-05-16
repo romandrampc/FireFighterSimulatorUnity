@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 2256054218609295558}
   - component: {fileID: 2256054218609295559}
   m_Layer: 0
-  m_Name: FireExWaterType
+  m_Name: FireEx_AType_WaterType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   foam: {fileID: 5085062206568400016}
   pivotHose: {fileID: 2256054219242314727}
   typeOfExtinToDestroyFlame: 0
-  damageFire: 15
+  damageFire: 18
   radius: 5
   range: 4
 --- !u!54 &2256054218609295559

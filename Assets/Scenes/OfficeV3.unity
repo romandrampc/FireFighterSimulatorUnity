@@ -5158,8 +5158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 95}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: -77, y: 107.7}
+  m_SizeDelta: {x: 450, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &416147388
 BoxCollider:
@@ -5172,7 +5172,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 350, y: 100, z: 0.5}
+  m_Size: {x: 450, y: 125, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &416147389
 MonoBehaviour:
@@ -7672,6 +7672,7 @@ GameObject:
   - component: {fileID: 572296760}
   - component: {fileID: 572296759}
   - component: {fileID: 572296758}
+  - component: {fileID: 572296763}
   m_Layer: 0
   m_Name: MainController
   m_TagString: Untagged
@@ -7730,7 +7731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modeGame: 2
   mainMenuSceneName: New-MainMenu
-  playSceneName: 
+  playSceneName: OfficeV3
+  fireExtinSceneName: 
 --- !u!4 &572296762
 Transform:
   m_ObjectHideFlags: 0
@@ -7745,6 +7747,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &572296763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572296757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5269442c6c19a6e45a79307fe0855e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &585937868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22453,25 +22467,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9009434, b: 0.9009434, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 28164846496e46041bec2ec86f7d98d1, type: 3}
-    m_FontSize: 53
-    m_FontStyle: 0
+    m_FontSize: 70
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 61
-    m_Alignment: 4
+    m_MinSize: 7
+    m_MaxSize: 300
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Push Alarm
+  m_Text: 'Push Alarm '
 --- !u!222 &1488607515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28980,7 +28994,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900121953}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 18.711}
+  m_LocalPosition: {x: 0, y: 0, z: 18.748}
   m_LocalScale: {x: 0.0013199999, y: 0.0013199999, z: 0.13195999}
   m_Children:
   - {fileID: 416147387}

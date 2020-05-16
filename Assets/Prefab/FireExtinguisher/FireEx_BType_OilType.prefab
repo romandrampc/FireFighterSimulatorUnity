@@ -14325,7 +14325,7 @@ GameObject:
   - component: {fileID: 8140025904843107161}
   - component: {fileID: 8140025904843107162}
   m_Layer: 0
-  m_Name: FireExOilType
+  m_Name: FireEx_BType_OilType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14338,7 +14338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8140025904843107167}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.134, y: 1.324, z: 0.058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14423,9 +14423,9 @@ MonoBehaviour:
   foam: {fileID: 2966172412185557880}
   pivotHose: {fileID: 8140025905028238482}
   typeOfExtinToDestroyFlame: 1
-  damageFire: 20
-  radius: 4
-  range: 6
+  damageFire: 12
+  radius: 3
+  range: 5
 --- !u!54 &8140025904843107162
 Rigidbody:
   m_ObjectHideFlags: 0

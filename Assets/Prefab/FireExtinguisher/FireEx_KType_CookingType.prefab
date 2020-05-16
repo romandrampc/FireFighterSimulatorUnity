@@ -14401,7 +14401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5062236072348258827}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.228, y: 1.3185108, z: -0.763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14486,9 +14486,9 @@ MonoBehaviour:
   foam: {fileID: 2278386667062034988}
   pivotHose: {fileID: 5062236072498804166}
   typeOfExtinToDestroyFlame: 4
-  damageFire: 20
-  radius: 4
-  range: 6
+  damageFire: 25
+  radius: 4.5
+  range: 8
 --- !u!54 &5062236072348258830
 Rigidbody:
   m_ObjectHideFlags: 0

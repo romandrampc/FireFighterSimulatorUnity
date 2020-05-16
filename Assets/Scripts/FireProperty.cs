@@ -18,6 +18,9 @@ public class FireProperty : MonoBehaviour
     float[] maxEmission;
     float[] maxLifeTime;
     public TypeOfFlame typeOfFlames;
+
+    [Header("Obj To Destroy")]
+    [SerializeField] GameObject gameObjectToDestroy;
     
 
     private void Start()
@@ -43,6 +46,9 @@ public class FireProperty : MonoBehaviour
             //{
             //    CallBack.Invoke();
             //}
+            if (gameObjectToDestroy != null)
+                Destroy(gameObjectToDestroy);
+
             Destroy(this.gameObject);
         }
         else
