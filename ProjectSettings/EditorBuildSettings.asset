@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/New-MainMenu.unity
+    guid: fc8d4f983f618d64e9e5d08f8cb83017
+  - enabled: 1
+    path: Assets/Scenes/OfficeV3.unity
+    guid: 707a9d331f5940f4ab8bce8b02bf7bc7
+  - enabled: 1
+    path: Assets/Scenes/OfficeTrainFireExtinguisher.unity
+    guid: 12415f7ef00e2df45a555b0497807315
   m_configObjects: {}

@@ -5605,13 +5605,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   callBack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490125772}
+        m_MethodName: LoadFireExtinScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  modeGame: 3
 --- !u!224 &534607278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
     type: 3}
   m_PrefabInstance: {fileID: 534607275}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &534607279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534607276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1211.369, y: 362.74, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &548774488
 GameObject:
   m_ObjectHideFlags: 0
@@ -8290,7 +8315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9013,6 +9038,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8490a182647b1824587df653d86a4902,
     type: 3}
   m_PrefabInstance: {fileID: 1045761881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1105473362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 485514, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 941877261}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1113564829
 PrefabInstance:
@@ -11259,7 +11290,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   callBack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490125772}
+        m_MethodName: LoadTrainingScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  modeGame: 0
+--- !u!65 &1316633109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316633107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1211.369, y: 362.74, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1316955374
 GameObject:
   m_ObjectHideFlags: 0
@@ -13145,9 +13201,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1490125771}
   - component: {fileID: 1490125770}
+  - component: {fileID: 1490125772}
+  - component: {fileID: 1490125767}
   - component: {fileID: 1490125769}
   - component: {fileID: 1490125768}
-  - component: {fileID: 1490125767}
   - component: {fileID: 1490125766}
   m_Layer: 0
   m_Name: MainController
@@ -13233,8 +13290,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1490125772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490125765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8574b502e6fc7e459b337917587e657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500546064
 GameObject:
   m_ObjectHideFlags: 0
@@ -17390,6 +17459,7 @@ MonoBehaviour:
   callBack:
     m_PersistentCalls:
       m_Calls: []
+  modeGame: 1
 --- !u!1001 &2060425815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17976,12 +18046,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107789476}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.909, y: 0.958, z: 20.251}
+  m_LocalRotation: {x: -0, y: 0.121929005, z: -0, w: 0.9925388}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1105473362}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2117712306
 PrefabInstance:

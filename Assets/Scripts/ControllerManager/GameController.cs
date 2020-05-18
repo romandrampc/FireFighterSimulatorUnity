@@ -45,9 +45,9 @@ public class GameController : MonoBehaviour
     #endregion
 
     [Header("Scene Name")]
-    [SerializeField] string mainMenuSceneName;
-    [SerializeField] string playSceneName;
-    [SerializeField] string fireExtinSceneName;
+    [SerializeField] internal string mainMenuSceneName;
+    [SerializeField] internal string playSceneName;
+    [SerializeField] internal string fireExtinSceneName;
 
     string tempStr;
 
@@ -62,6 +62,7 @@ public class GameController : MonoBehaviour
         else
         {
             instanceGame = this;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -91,6 +92,7 @@ public class GameController : MonoBehaviour
         if (SceneManager.GetActiveScene().name == playSceneName)
         {
             teleport = Teleport.instance;
+            
             // Check To Set Survivor Control Active
             if (modeGame == ModeGame.Survivor)
             {

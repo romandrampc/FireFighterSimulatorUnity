@@ -18,9 +18,9 @@ public class RayForMainMenu : MonoBehaviour
 
     public SteamVR_Action_Boolean grabPinchAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
 
-    [SerializeField] float range = 2.0f;
+    [SerializeField] float range = 5.0f;
 
-    Ray shootRay = new Ray();
+    Ray shootRay;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,7 @@ public class RayForMainMenu : MonoBehaviour
 
     public void ShowHitScan()
     {
+        shootRay = new Ray(transform.position, transform.forward);
         if (hitScanMenuLine != null)
         {
             shootRay.origin = PivotRay.transform.position;
@@ -44,6 +45,10 @@ public class RayForMainMenu : MonoBehaviour
             {
                 hitScanMenuLine.SetPosition(0, PivotRay.transform.position);
                 hitScanMenuLine.SetPosition(1, shootHit.point);
+                if (grabPinchAction.GetStateDown(handType))
+                {
+                    shootHit.collider.gameObject.SendMessage("OnAction", SendMessageOptions.DontRequireReceiver);
+                }
             }
             else
             {
@@ -51,10 +56,7 @@ public class RayForMainMenu : MonoBehaviour
                 hitScanMenuLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
             }
 
-            if (grabPinchAction.GetStateDown(handType))
-            {
-                shootHit.collider.gameObject.SendMessage("OnAction", SendMessageOptions.DontRequireReceiver);
-            }
+            
         }
     }
 }
