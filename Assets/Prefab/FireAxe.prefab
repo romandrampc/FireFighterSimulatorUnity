@@ -231,8 +231,8 @@ MonoBehaviour:
   buttAxeOffset: {fileID: 8696491119885831786}
   radiusButtAxe: 0.07
   radiusPickAxe: 0.1
-  minDegreeSmash: 80
-  maxDegreeSmash: 100
+  minDegreeSmash: 310
+  maxDegreeSmash: 325
 --- !u!54 &8696491118519237303
 Rigidbody:
   m_ObjectHideFlags: 0

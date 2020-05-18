@@ -95,6 +95,8 @@ public class Axe : MonoBehaviour
     {
         
         Transform tranfromParent = transform.parent.gameObject.transform;
+
+        //Debug.Log("Rotation :" + tranfromParent.rotation.eulerAngles.x);
         checkToDraw = true;
         StartPointButtAxe = buttAxeOffset.transform.position;
         Collider[] hitColliders = Physics.OverlapSphere(StartPointButtAxe, radiusButtAxe);
@@ -102,9 +104,10 @@ public class Axe : MonoBehaviour
         {
             if (collider.CompareTag("Door"))
             {
-                if((tranfromParent.rotation.x < minDegreeSmash && tranfromParent.rotation.x > maxDegreeSmash ) || (tranfromParent.rotation.x < minDegreeSmash * -1 && tranfromParent.rotation.x > maxDegreeSmash * -1))
+                if ((tranfromParent.rotation.eulerAngles.x > minDegreeSmash && tranfromParent.rotation.eulerAngles.x < maxDegreeSmash ) || (tranfromParent.rotation.eulerAngles.x > minDegreeSmash * -1 && tranfromParent.rotation.eulerAngles.x < maxDegreeSmash * -1))
                 {
                     // this part to open door with axe
+                    collider.SendMessage("SmashButt",SendMessageOptions.DontRequireReceiver);
                 }
             }
         }

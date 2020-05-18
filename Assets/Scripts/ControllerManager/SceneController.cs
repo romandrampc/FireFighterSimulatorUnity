@@ -8,8 +8,8 @@ public class SceneController : MonoBehaviour
     GameController gameController;
 
     public static SceneController instanceScene;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         if (instanceScene != null && instanceScene != this)
         {
@@ -20,6 +20,11 @@ public class SceneController : MonoBehaviour
             instanceScene = this;
             gameController = GameController.instanceGame;
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
         
     }
     

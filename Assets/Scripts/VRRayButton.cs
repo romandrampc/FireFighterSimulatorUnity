@@ -16,18 +16,18 @@ public class VRRayButton : MonoBehaviour
     {
         sceneController = SceneController.instanceScene;
 
-        //if (modeGame == ModeGame.Survivor)
-        //{
-        //    callBack.AddListener(sceneController.LoadSurvivorScene);
-        //}
-        //else if (modeGame == ModeGame.Training)
-        //{
-        //    callBack.AddListener(sceneController.LoadTrainingScene);
-        //}
-        //else if (modeGame == ModeGame.FireExtin)
-        //{
-        //    callBack.AddListener(sceneController.LoadFireExtinScene);
-        //}
+        if (modeGame == ModeGame.Survivor)
+        {
+            callBack.AddListener(sceneController.LoadSurvivorScene);
+        }
+        else if (modeGame == ModeGame.Training)
+        {
+            callBack.AddListener(sceneController.LoadTrainingScene);
+        }
+        else if (modeGame == ModeGame.FireExtin)
+        {
+            callBack.AddListener(sceneController.LoadFireExtinScene);
+        }
     }
 
     public void OnAction()

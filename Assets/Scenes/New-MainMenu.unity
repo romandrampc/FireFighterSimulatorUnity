@@ -5504,7 +5504,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -5605,18 +5605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   callBack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1490125772}
-        m_MethodName: LoadFireExtinScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   modeGame: 3
 --- !u!224 &534607278 stripped
 RectTransform:
@@ -11290,18 +11279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   callBack:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1490125772}
-        m_MethodName: LoadTrainingScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   modeGame: 0
 --- !u!65 &1316633109
 BoxCollider:
