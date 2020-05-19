@@ -99,9 +99,6 @@ public class FireExtinguisher : MonoBehaviour
 
         if (canDetachFromhand && interactGrabType == GrabTypes.Grip)
         {
-            Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
-            rigidbody.isKinematic = false;
-
             // Detach this object from the hand
             hand.DetachObject(gameObject);
 
@@ -115,6 +112,9 @@ public class FireExtinguisher : MonoBehaviour
             handGrab = null;
             isAttachHand = false;
             canDetachFromhand = false;
+
+            Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+            rigidbody.isKinematic = false;
         }
 
     }
