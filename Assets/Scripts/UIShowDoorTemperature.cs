@@ -57,13 +57,28 @@ public class UIShowDoorTemperature : MonoBehaviour
 
     void CheckAngle()
     {
-        if (pivotTranfromDoor.rotation.eulerAngles.y >= startAngle + targetAngle)
+        if (targetAngle >0)
         {
-            if (!wasGameover)
+            if (pivotTranfromDoor.rotation.eulerAngles.y >= startAngle + targetAngle)
             {
-                GameController.instanceGame.OnGameOver();
-                wasGameover = true;
+                if (!wasGameover)
+                {
+                    GameController.instanceGame.OnGameOver();
+                    wasGameover = true;
+                }
             }
         }
+        else if (targetAngle < 0)
+        {
+            if (pivotTranfromDoor.rotation.eulerAngles.y <= startAngle + targetAngle)
+            {
+                if (!wasGameover)
+                {
+                    GameController.instanceGame.OnGameOver();
+                    wasGameover = true;
+                }
+            }
+        }
+        
     }
 }

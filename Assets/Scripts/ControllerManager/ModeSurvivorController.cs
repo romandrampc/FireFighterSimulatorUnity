@@ -17,12 +17,11 @@ public class ModeSurvivorController : MonoBehaviour
         else
         {
             instanceGameModeSurvivor = this;
-            gameController = GameController.instanceGame;
         }
     }
     private void OnEnable()
     {
-        
+        gameController = GameController.instanceGame;
     }
     // Start is called before the first frame update
     void Start()

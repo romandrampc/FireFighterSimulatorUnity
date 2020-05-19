@@ -7,6 +7,7 @@ public class DoorSmash : MonoBehaviour
     [SerializeField] Transform doorPivot;
     [SerializeField] float targetAngle =80.0f;
     [SerializeField] float speedRotate = 0.1f;
+    [SerializeField] GameObject textLock;
 
     bool wasSmash = false;
 
@@ -31,5 +32,6 @@ public class DoorSmash : MonoBehaviour
     void SmashButt()
     {
         wasSmash = true;
+        textLock.SetActive(false);
     }
 }

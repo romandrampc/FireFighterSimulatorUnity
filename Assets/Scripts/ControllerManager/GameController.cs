@@ -69,8 +69,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        modeSurvivor = ModeSurvivorController.instanceGameModeSurvivor;
-        modeTraining = ModeTrainingController.instanceGameModeTraining;
         modeFireExtin = ModeFireExtinController.instanceGameModeTrainFireExtinguisher;
     }
 
@@ -83,8 +81,8 @@ public class GameController : MonoBehaviour
 
         if (modeGame == ModeGame.MainMenu)
         {
-            modeSurvivor.enabled = false;
-            modeTraining.enabled = false;
+            //modeSurvivor.enabled = false;
+            //modeTraining.enabled = false;
             modeFireExtin.enabled = false;
             wasEnter = false;
         }
@@ -92,7 +90,9 @@ public class GameController : MonoBehaviour
         if (SceneManager.GetActiveScene().name == playSceneName)
         {
             teleport = Teleport.instance;
-            
+            modeSurvivor = ModeSurvivorController.instanceGameModeSurvivor;
+            modeTraining = ModeTrainingController.instanceGameModeTraining;
+
             // Check To Set Survivor Control Active
             if (modeGame == ModeGame.Survivor)
             {

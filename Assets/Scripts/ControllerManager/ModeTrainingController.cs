@@ -17,13 +17,12 @@ public class ModeTrainingController : MonoBehaviour
         else
         {
             instanceGameModeTraining = this;
-            gameController = GameController.instanceGame;
         }
     }
 
     private void OnEnable()
     {
-        
+        gameController = GameController.instanceGame;
     }
 
     // Start is called before the first frame update
