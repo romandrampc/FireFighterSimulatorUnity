@@ -87,7 +87,7 @@ public class Axe : MonoBehaviour
             if (collider.CompareTag("SmashObject"))
             {
                 // this part to destroy object that 
-                Destroy(collider.gameObject);
+                collider.gameObject.SetActive(false);
             }
         }
     }

@@ -47,9 +47,9 @@ public class FireProperty : MonoBehaviour
             //    CallBack.Invoke();
             //}
             if (gameObjectToDestroy != null)
-                Destroy(gameObjectToDestroy);
+                gameObjectToDestroy.SetActive(false);
 
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         else
         {
