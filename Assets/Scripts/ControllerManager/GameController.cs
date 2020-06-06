@@ -48,10 +48,15 @@ public class GameController : MonoBehaviour
     [SerializeField] internal string mainMenuSceneName;
     [SerializeField] internal string playSceneName;
     [SerializeField] internal string fireExtinSceneName;
+    [SerializeField] internal string scoreSceneName;
 
     string tempStr;
 
-    bool wasEnter = false;
+    internal bool wasEnter = false;
+
+    #region Score Part
+
+    #endregion
 
     private void Awake()
     {
@@ -128,6 +133,7 @@ public class GameController : MonoBehaviour
             if (modeGame == ModeGame.FireExtin)
             {
                 modeFireExtin.enabled = true;
+                modeFireExtin.OnDouseComplete.AddListener(OnDousedFire);
             }
         }
     }
@@ -146,5 +152,10 @@ public class GameController : MonoBehaviour
     public void OnGameOver()
     {
         Debug.Log("GameOver");
+    }
+
+    internal void OnDousedFire()
+    {
+        SceneController.instanceScene.LoadMainMenu();
     }
 }

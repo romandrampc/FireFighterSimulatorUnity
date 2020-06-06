@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using UnityEngine.Events;
 
 public class UIButton : UIElement
 {
+    internal UnityEvent buttonPushEvents;
+
     protected override void Awake()
     {
         base.Awake();
@@ -18,6 +21,7 @@ public class UIButton : UIElement
 
     public void PlaySound(AudioClip tempclip)
     {
+        buttonPushEvents.Invoke();
         SoundController.instanceSound.AudioPlay(tempclip);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ModeFireExtinController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ModeFireExtinController : MonoBehaviour
     GameObject[] arrayFireInScene;
 
     bool isComplete;
+
+    internal UnityEvent OnDouseComplete;
 
     private void Awake()
     {
@@ -44,6 +47,7 @@ public class ModeFireExtinController : MonoBehaviour
             {
                 Debug.Log("Quest Complete");
                 isComplete = true;
+                OnDouseComplete.Invoke();
             }
         }
     }

@@ -30,17 +30,20 @@ public class SceneController : MonoBehaviour
     
     public void LoadMainMenu()
     {
+        gameController.modeGame = ModeGame.MainMenu;
         SceneManager.LoadScene(gameController.mainMenuSceneName);
     }
 
     public void LoadTrainingScene()
     {
+        gameController.wasEnter = false;
         gameController.modeGame = ModeGame.Training;
         SceneManager.LoadScene(gameController.playSceneName);
     }
 
     public void LoadSurvivorScene()
     {
+        gameController.wasEnter = false;
         gameController.modeGame = ModeGame.Survivor;
         SceneManager.LoadScene(gameController.playSceneName);
     }
@@ -49,5 +52,11 @@ public class SceneController : MonoBehaviour
     {
         gameController.modeGame = ModeGame.FireExtin;
         SceneManager.LoadScene(gameController.fireExtinSceneName);
+    }
+    
+    public void LoadScoreScene()
+    {
+        gameController.modeGame = ModeGame.MainMenu;
+        SceneManager.LoadScene(gameController.scoreSceneName);
     }
 }

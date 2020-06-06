@@ -13181,8 +13181,6 @@ GameObject:
   - component: {fileID: 1490125770}
   - component: {fileID: 1490125772}
   - component: {fileID: 1490125767}
-  - component: {fileID: 1490125769}
-  - component: {fileID: 1490125768}
   - component: {fileID: 1490125766}
   m_Layer: 0
   m_Name: MainController
@@ -13216,30 +13214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundEffectSource: {fileID: 0}
---- !u!114 &1490125768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490125765}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa2360f694a6cf4493c63e389f17fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1490125769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490125765}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7913a14ac30b0b246adfae393a3165d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1490125770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13256,6 +13230,7 @@ MonoBehaviour:
   mainMenuSceneName: New-MainMenu
   playSceneName: OfficeV3
   fireExtinSceneName: OfficeTrainFireExtinguisher
+  scoreSceneName: Score-1
 --- !u!4 &1490125771
 Transform:
   m_ObjectHideFlags: 0

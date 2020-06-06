@@ -28,6 +28,10 @@ public class VRRayButton : MonoBehaviour
         {
             callBack.AddListener(sceneController.LoadFireExtinScene);
         }
+        else if (modeGame == ModeGame.MainMenu)
+        {
+            callBack.AddListener(sceneController.LoadMainMenu);
+        }
     }
 
     public void OnAction()
