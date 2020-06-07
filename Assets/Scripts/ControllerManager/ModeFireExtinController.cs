@@ -30,6 +30,7 @@ public class ModeFireExtinController : MonoBehaviour
 
     private void OnEnable()
     {
+        OnDouseComplete = new UnityEvent();
         isComplete = false;   
     }
     // Start is called before the first frame update

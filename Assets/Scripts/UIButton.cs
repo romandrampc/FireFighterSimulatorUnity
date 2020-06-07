@@ -11,6 +11,7 @@ public class UIButton : UIElement
     protected override void Awake()
     {
         base.Awake();
+        buttonPushEvents = new UnityEvent();
     }
 
     protected override void OnButtonClick()

@@ -13227,10 +13227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeGame: 2
+  elevatorArea: TeleportAreaRoomZone3_5_Elevetor
+  exitArea: TeleportAreaRoomZone4_Exit
+  timeForSurvive: 180
   mainMenuSceneName: New-MainMenu
   playSceneName: OfficeV3
   fireExtinSceneName: OfficeTrainFireExtinguisher
   scoreSceneName: Score-1
+  gameOverSceneName: GameOverScene
 --- !u!4 &1490125771
 Transform:
   m_ObjectHideFlags: 0
