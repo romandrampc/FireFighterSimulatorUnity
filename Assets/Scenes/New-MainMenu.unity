@@ -17911,7 +17911,7 @@ MonoBehaviour:
   grabPinchAction:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  range: 2
+  range: 3
 --- !u!120 &2107789478
 LineRenderer:
   m_ObjectHideFlags: 0

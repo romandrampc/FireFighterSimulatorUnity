@@ -655,7 +655,7 @@ MonoBehaviour:
   grabPinchAction:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  range: 2
+  range: 4
 --- !u!120 &521539068
 LineRenderer:
   m_ObjectHideFlags: 0
