@@ -75,6 +75,8 @@ public class GameController : MonoBehaviour
 
     internal bool wasEnter = false;
 
+    bool wasAddFireExtinTrain =false;
+
 
     private void Awake()
     {
@@ -155,7 +157,11 @@ public class GameController : MonoBehaviour
             if (modeGame == ModeGame.FireExtin)
             {
                 modeFireExtin.enabled = true;
-                modeFireExtin.OnDouseComplete.AddListener(OnDousedFire);
+                if (!wasAddFireExtinTrain)
+                {
+                    modeFireExtin.OnDouseComplete.AddListener(OnDousedFire);
+                    wasAddFireExtinTrain = true;
+                }
             }
         }
     }
@@ -203,6 +209,7 @@ public class GameController : MonoBehaviour
 
     internal void OnDousedFire()
     {
+        wasAddFireExtinTrain = false;
         SceneController.instanceScene.LoadMainMenu();
     }
 

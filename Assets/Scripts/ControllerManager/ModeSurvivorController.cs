@@ -58,6 +58,7 @@ public class ModeSurvivorController : MonoBehaviour
 
         timeCountDown = gameController.timeForSurvive;
         canCountDown = true;
+        wasComZone1 = false;
 
         foreach (GameObject ui in UITutorial)
         {
@@ -75,6 +76,7 @@ public class ModeSurvivorController : MonoBehaviour
     {
         #region Quest Zone1
 
+        Debug.Log("1." +!FireZone1.activeInHierarchy);
         if (!FireZone1.activeInHierarchy && (progessZone1 & 1) == 0)
         {
             progessZone1 = progessZone1 | 1;
