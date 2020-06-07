@@ -8689,6 +8689,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 611088802}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &611088804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1634785789898016, guid: 00a7e5bcb97c3b34c84083e963ee91ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 611088802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &623535174
 GameObject:
   m_ObjectHideFlags: 0
@@ -13327,7 +13333,7 @@ PrefabInstance:
     - target: {fileID: 2362369176446851918, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2362369176446851918, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
@@ -13364,6 +13370,11 @@ PrefabInstance:
       propertyPath: typeOfFlames
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: gameObjectToDestroy
+      value: 
+      objectReference: {fileID: 611088804}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1763b7e0f0b1f004da51c07f24e81e0e, type: 3}
 --- !u!4 &947928336 stripped
@@ -23466,8 +23477,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1644722809}
   - {fileID: 947928336}
+  - {fileID: 1644722809}
   m_Father: {fileID: 1855871537}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25813,7 +25824,7 @@ PrefabInstance:
     - target: {fileID: 2362369176446851918, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2362369176446851918, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 
 public class FireExtinguisher : MonoBehaviour
@@ -14,7 +15,8 @@ public class FireExtinguisher : MonoBehaviour
     public float catchingSpeedThreshold = -1;
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
-    public Transform gripOffset;
+    public Transform gripOffsetR;
+    public Transform gripOffsetL;
 
 
     private Hand handGrab;
@@ -85,7 +87,14 @@ public class FireExtinguisher : MonoBehaviour
             hand.HoverLock(interactable);
 
             // Attach this object to the hand
-            hand.AttachObject(gameObject, interactGrabType, attachmentFlags, gripOffset);
+            if (hand.handType == SteamVR_Input_Sources.LeftHand)
+            {
+                hand.AttachObject(gameObject, interactGrabType, attachmentFlags, gripOffsetL  );
+            }
+            else if (hand.handType == SteamVR_Input_Sources.RightHand)
+            {
+                hand.AttachObject(gameObject, interactGrabType, attachmentFlags, gripOffsetR);
+            }
 
             handGrab = hand;
             isAttachHand = true;
