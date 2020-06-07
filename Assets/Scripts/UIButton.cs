@@ -23,6 +23,6 @@ public class UIButton : UIElement
     public void PlaySound(AudioClip tempclip)
     {
         buttonPushEvents.Invoke();
-        SoundController.instanceSound.AudioPlay(tempclip);
+        SoundController.instanceSound.AudioPlay(tempclip,0.1f);
     }
 }
