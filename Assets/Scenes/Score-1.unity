@@ -2357,7 +2357,7 @@ MonoBehaviour:
   callBack:
     m_PersistentCalls:
       m_Calls: []
-  modeGame: 1
+  modeGame: 0
 --- !u!65 &1588750725
 BoxCollider:
   m_ObjectHideFlags: 0

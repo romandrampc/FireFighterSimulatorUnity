@@ -31018,6 +31018,11 @@ PrefabInstance:
       propertyPath: gameObjectToDestroy
       value: 
       objectReference: {fileID: 1228624263}
+    - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: typeOfFlames
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1763b7e0f0b1f004da51c07f24e81e0e, type: 3}
 --- !u!4 &1910888777 stripped
