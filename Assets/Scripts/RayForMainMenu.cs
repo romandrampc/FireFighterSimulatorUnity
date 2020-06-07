@@ -38,6 +38,13 @@ public class RayForMainMenu : MonoBehaviour
 
     public void ShowHitScan()
     {
+        if (shootHitObj != null)
+        {
+            shootHitObj.SendMessage("OnDisHighlight", SendMessageOptions.DontRequireReceiver);
+
+            shootHitObj = null;
+        }
+
         shootRay = new Ray(transform.position, transform.forward);
         if (hitScanMenuLine != null)
         {
@@ -51,18 +58,14 @@ public class RayForMainMenu : MonoBehaviour
                 {
                     shootHit.collider.gameObject.SendMessage("OnAction", SendMessageOptions.DontRequireReceiver);
                 }
+
                 
+
                 if (shootHit.collider.CompareTag("UIRayCast"))
                 {
                     shootHit.collider.gameObject.SendMessage("OnHighlight", SendMessageOptions.DontRequireReceiver);
 
                     shootHitObj = shootHit.collider.gameObject;
-                }
-                else if (shootHitObj != null)
-                {
-                    shootHitObj.SendMessage("OnDisHighlight", SendMessageOptions.DontRequireReceiver);
-
-                    shootHitObj = null;
                 }
             }
             else

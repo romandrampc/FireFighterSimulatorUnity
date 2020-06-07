@@ -5628,7 +5628,7 @@ MonoBehaviour:
       m_Calls: []
   modeGame: 3
   panelImage: {fileID: 534607280}
-  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0}
+  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0.78431374}
 --- !u!224 &534607278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
@@ -11333,7 +11333,7 @@ MonoBehaviour:
       m_Calls: []
   modeGame: 0
   panelImage: {fileID: 1598251423}
-  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0}
+  TargetColor: {r: 0.16470589, g: 0.99215686, b: 0.9137255, a: 0.78431374}
 --- !u!65 &1316633109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17488,7 +17488,7 @@ MonoBehaviour:
       m_Calls: []
   modeGame: 1
   panelImage: {fileID: 566507300}
-  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0}
+  TargetColor: {r: 0.16470589, g: 0.99215686, b: 0.9137255, a: 0.78431374}
 --- !u!65 &2047248952
 BoxCollider:
   m_ObjectHideFlags: 0
