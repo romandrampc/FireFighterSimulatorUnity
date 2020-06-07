@@ -23,7 +23,23 @@ public class ModeSurvivorController : MonoBehaviour
     [SerializeField] int goalZone2 = 1;
 
     [Header("Side Quest Zone 1")]
-    [SerializeField] UIButton alarmButton;
+    [SerializeField] UIButton alarmButton_Z1;
+
+    [Header("Side Quest Zone 2")]
+    [SerializeField] GameObject firePlug1_Z2;
+    [SerializeField] GameObject fireBook1_Z2;
+    [SerializeField] GameObject fireBook2_Z2;
+
+    [Header("Side Quest Zone 3")]
+    [SerializeField] GameObject fireBook1_Z3;
+    [SerializeField] GameObject fireBook2_Z3;
+    int progessFireExtra = 0;
+
+    [Header("UI Array")]
+    [SerializeField] GameObject[] UITutorial;
+
+    internal float timeCountDown;
+    bool canCountDown;
     private void Awake()
     {
         if (instanceGameModeSurvivor != null && instanceGameModeSurvivor != this)
@@ -38,7 +54,15 @@ public class ModeSurvivorController : MonoBehaviour
     private void OnEnable()
     {
         gameController = GameController.instanceGame;
-        alarmButton.buttonPushEvents.AddListener(OnAlarmPush);
+        alarmButton_Z1.buttonPushEvents.AddListener(OnAlarmPush);
+
+        timeCountDown = gameController.timeForSurvive;
+        canCountDown = true;
+
+        foreach (GameObject ui in UITutorial)
+        {
+            ui.SetActive(false);
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -49,11 +73,93 @@ public class ModeSurvivorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        #region Quest Zone1
+
+        if (!FireZone1.activeInHierarchy && (progessZone1 & 1) == 0)
+        {
+            progessZone1 = progessZone1 | 1;
+        }
+
+        // example for complete quest
+        if (goalZone1 == (progessZone1 & goalZone1))
+        {
+            Debug.Log("Zone 1 Complete");
+            if (!wasComZone1)
+            {
+                DoorLock.enabled = true;
+                wasComZone1 = true;
+            }
+        }
+
+        #endregion
+
+        #region Quest Zone2
+
+        if ((!desk1.activeInHierarchy && !desk2.activeInHierarchy) && (progessZone2 & 1) == 0)
+        {
+            progessZone2 = progessZone2 | 1;
+        }
+
+        if (goalZone2 == (progessZone2 & goalZone2))
+        {
+            Debug.Log("Zone 2 Complete");
+            gameController.useAxeScore = 5;
+            BlockingTeleportPart.SetActive(false);
+        }
+        #endregion
+
+        #region Side Quest Fire
+        if (!firePlug1_Z2.activeInHierarchy && (progessFireExtra & 1) == 0)
+        {
+            gameController.douseFireScore += 2;
+            progessFireExtra = progessFireExtra | 1;
+        }
+
+        if (!fireBook1_Z2.activeInHierarchy && (progessFireExtra & 2) == 0)
+        {
+            gameController.douseFireScore += 2;
+            progessFireExtra = progessFireExtra | 2;
+        }
+
+        if (!fireBook2_Z2.activeInHierarchy && (progessFireExtra & 3) == 0)
+        {
+            gameController.douseFireScore += 2;
+            progessFireExtra = progessFireExtra | 3;
+        }
+
+        if (!fireBook1_Z3.activeInHierarchy && (progessFireExtra & 4) == 0)
+        {
+            gameController.douseFireScore += 2;
+            progessFireExtra = progessFireExtra | 4;
+        }
+
+        if (!fireBook2_Z3.activeInHierarchy && (progessFireExtra & 5) == 0)
+        {
+            gameController.douseFireScore += 2;
+            progessFireExtra = progessFireExtra | 5;
+        }
+        #endregion
+
+        #region timer 
+        if (timeCountDown >0.0f && canCountDown)
+        {
+            timeCountDown -= Time.deltaTime;
+        }
+        else if (timeCountDown <= 0.0f)
+        {
+            canCountDown = false;
+            gameController.OnGameOver();
+        }
+        #endregion
     }
 
     void OnAlarmPush()
     {
+        gameController.pushAlarmPartScore = 5;
+    }
 
+    void OnFireCabinOpen()
+    {
+        progessZone1 = progessZone1 | 2;
     }
 }

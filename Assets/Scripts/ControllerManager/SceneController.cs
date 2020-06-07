@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR.InteractionSystem;
 
 public class SceneController : MonoBehaviour
 {
@@ -58,5 +59,11 @@ public class SceneController : MonoBehaviour
     {
         gameController.modeGame = ModeGame.MainMenu;
         SceneManager.LoadScene(gameController.scoreSceneName);
+    }
+
+    public void LoadGameOver()
+    {
+        gameController.modeGame = ModeGame.MainMenu;
+        SceneManager.LoadScene(gameController.gameOverSceneName);
     }
 }

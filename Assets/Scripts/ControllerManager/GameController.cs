@@ -44,19 +44,37 @@ public class GameController : MonoBehaviour
     Teleport teleport;
     #endregion
 
+    #region Teleport Area Target Name
+    [Header("Teleport Area Name")]
+    [SerializeField] internal string elevatorArea = "TeleportAreaRoomZone3_5_Elevetor";
+    [SerializeField] internal string exitArea = "TeleportAreaRoomZone4_Exit";
+    #endregion
+
+    #region Timer Setting
+    [Header("Timer Setting")]
+    [SerializeField] internal float timeForSurvive = 120.0f;
+    #endregion
+
+    #region Scene Name
     [Header("Scene Name")]
     [SerializeField] internal string mainMenuSceneName;
     [SerializeField] internal string playSceneName;
     [SerializeField] internal string fireExtinSceneName;
     [SerializeField] internal string scoreSceneName;
+    [SerializeField] internal string gameOverSceneName;
+    #endregion
+
+    #region Score Part
+    internal int pushAlarmPartScore = 0;
+    internal int douseFireScore = 0;
+    internal int useAxeScore = 0;
+    internal int timeScore = 0;
+    #endregion
 
     string tempStr;
 
     internal bool wasEnter = false;
 
-    #region Score Part
-
-    #endregion
 
     private void Awake()
     {
@@ -104,6 +122,10 @@ public class GameController : MonoBehaviour
                 modeSurvivor.enabled = true;
                 if (!wasEnter)
                 {
+                    pushAlarmPartScore = 0;
+                    douseFireScore = 0;
+                    useAxeScore = 0;
+                    timeScore = 0;
                     teleport.onTeleport.AddListener(OnTeleport);
                     wasEnter = true;
                 }
@@ -147,15 +169,46 @@ public class GameController : MonoBehaviour
     void OnTeleport(string tempTeleAreaName)
     {
         Debug.Log("Tele Area :" + tempTeleAreaName);
+        if (tempTeleAreaName == elevatorArea)
+        {
+            OnGameOver();
+        }
+        else if (tempTeleAreaName == exitArea)
+        {
+            if (modeGame == ModeGame.Survivor)
+            {
+                if (modeSurvivor.timeCountDown >= timeForSurvive / 2.0f)
+                {
+                    timeScore = 20;
+                }
+                else
+                {
+                    float tempScore = ( 20 / (timeForSurvive / 2.0f) ) * modeSurvivor.timeCountDown;
+                    timeScore = Mathf.RoundToInt(tempScore);
+                }
+                StartCoroutine(WaitForCalculate(1.5f));
+            }
+            else if (modeGame == ModeGame.Training)
+            {
+                SceneController.instanceScene.LoadMainMenu();
+            }
+        }
     }
 
     public void OnGameOver()
     {
         Debug.Log("GameOver");
+        SceneController.instanceScene.LoadGameOver();
     }
 
     internal void OnDousedFire()
     {
         SceneController.instanceScene.LoadMainMenu();
+    }
+
+    private IEnumerator WaitForCalculate(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        SceneController.instanceScene.LoadScoreScene();
     }
 }

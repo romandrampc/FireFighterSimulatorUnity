@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 49705159}
   - component: {fileID: 49705158}
   m_Layer: 5
-  m_Name: TxtScore
+  m_Name: TxtTitleScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1898,7 +1898,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Name
-      value: btn_Tutorial (2)
+      value: btn_MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 1453687418}
   - component: {fileID: 1453687417}
   m_Layer: 5
-  m_Name: TxtScore3 (1)
+  m_Name: TxtScore4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2317,7 +2317,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Name
-      value: btn_Tutorial (1)
+      value: btn_Tryagain
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -2460,6 +2460,7 @@ GameObject:
   - component: {fileID: 1715763866}
   - component: {fileID: 1715763865}
   - component: {fileID: 1715763864}
+  - component: {fileID: 1715763868}
   m_Layer: 5
   m_Name: CanvasScore
   m_TagString: Untagged
@@ -2556,6 +2557,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2.052}
   m_SizeDelta: {x: 2568.2627, y: 1455.112}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1715763868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715763863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd122f8210ac1d439ea2f87f612a121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtPushAlarmScore: {fileID: 1526664094}
+  txtFireScore: {fileID: 918686635}
+  txtUseAxeScore: {fileID: 896922765}
+  txtTimeScore: {fileID: 1453687417}
 --- !u!1 &1733442447
 GameObject:
   m_ObjectHideFlags: 0
