@@ -134,10 +134,12 @@ public class FireExtinguisher : MonoBehaviour
         if (!foam.isPlaying)
         {
             foam.Play();
-            fireExtinguisherAudio.Play();
+            
         }
-		
-	}
+        if (!fireExtinguisherAudio.isPlaying)
+            fireExtinguisherAudio.Play();
+
+    }
 
 	public void StopParticle()
 	{
