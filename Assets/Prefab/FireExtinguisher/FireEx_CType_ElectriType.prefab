@@ -67,6 +67,7 @@ Transform:
   - {fileID: 6418852969896190386}
   - {fileID: 6418852970927617459}
   - {fileID: 6418852971636359508}
+  - {fileID: 2692525888791096033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -136,7 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachmentFlags: 44
   catchingSpeedThreshold: -1
-  gripOffset: {fileID: 6418852971636359508}
+  gripOffsetR: {fileID: 6418852971636359508}
+  gripOffsetL: {fileID: 2692525888791096033}
   interactable: {fileID: 0}
   foam: {fileID: 56999497641891399}
   pivotHose: {fileID: 6418852969896190381}
@@ -481,7 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6418852971636359508}
   m_Layer: 0
-  m_Name: GripOffset
+  m_Name: GripOffsetR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,6 +503,36 @@ Transform:
   m_Father: {fileID: 6418852970348578401}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
+--- !u!1 &8567931550439426703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2692525888791096033}
+  m_Layer: 0
+  m_Name: GripOffsetL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2692525888791096033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567931550439426703}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0.052, y: 0.011, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6418852970348578401}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1001 &6418852970572019216
 PrefabInstance:
   m_ObjectHideFlags: 0

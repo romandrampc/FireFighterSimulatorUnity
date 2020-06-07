@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &628928928559151940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3535161403527789729}
+  m_Layer: 0
+  m_Name: AxeOffsetL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3535161403527789729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628928928559151940}
+  m_LocalRotation: {x: 0, y: 0.70710677, z: 0.70710677, w: 0}
+  m_LocalPosition: {x: 0, y: 0.112, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8696491118519237297}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 270}
 --- !u!1 &2028972759683762626
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353747460317940341}
   m_Layer: 0
-  m_Name: AxeOffset
+  m_Name: AxeOffsetR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 353747460317940341}
+  - {fileID: 3535161403527789729}
   - {fileID: 8696491118962304768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -225,7 +256,8 @@ MonoBehaviour:
   attachmentFlags: 108
   catchingSpeedThreshold: -1
   interactable: {fileID: 0}
-  axeOffset: {fileID: 353747460317940341}
+  axeOffsetR: {fileID: 353747460317940341}
+  axeOffsetL: {fileID: 3535161403527789729}
   axePivot: {fileID: 8696491118962304768}
   pickAxeOffset: {fileID: 8696491119610990531}
   buttAxeOffset: {fileID: 8696491119885831786}
@@ -280,7 +312,7 @@ Transform:
   - {fileID: 8696491119610990531}
   - {fileID: 8696491119885831786}
   m_Father: {fileID: 8696491118519237297}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8696491119610990528
 GameObject:

@@ -1236,7 +1236,7 @@ PrefabInstance:
     - target: {fileID: 6418852970348578401, guid: 14287a01858b6d94588391f6d0cfff75,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6418852970348578401, guid: 14287a01858b6d94588391f6d0cfff75,
         type: 3}
@@ -3375,9 +3375,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeGame: 0
+  elevatorArea: TeleportAreaRoomZone3_5_Elevetor
+  exitArea: TeleportAreaRoomZone4_Exit
+  timeForSurvive: 120
   mainMenuSceneName: 
   playSceneName: TestRoomStage01
   fireExtinSceneName: 
+  scoreSceneName: 
+  gameOverSceneName: 
 --- !u!114 &708139563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3390,6 +3395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa2360f694a6cf4493c63e389f17fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireZone1: {fileID: 0}
+  DoorLock: {fileID: 0}
+  goalZone1: 3
+  desk1: {fileID: 0}
+  desk2: {fileID: 0}
+  BlockingTeleportPart: {fileID: 0}
+  goalZone2: 1
 --- !u!114 &708139564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3402,6 +3414,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7913a14ac30b0b246adfae393a3165d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireZone1: {fileID: 0}
+  DoorLock: {fileID: 0}
+  goalZone1: 3
+  desk1: {fileID: 0}
+  desk2: {fileID: 0}
+  BlockingTeleportPart: {fileID: 0}
+  goalZone2: 1
+  alarmButton_Z1: {fileID: 0}
+  firePlug1_Z2: {fileID: 0}
+  fireBook1_Z2: {fileID: 0}
+  fireBook2_Z2: {fileID: 0}
+  fireBook1_Z3: {fileID: 0}
+  fireBook2_Z3: {fileID: 0}
+  UITutorial: []
 --- !u!114 &708139565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6326,7 +6352,7 @@ PrefabInstance:
     - target: {fileID: 2256054218609295557, guid: 628f963a67a953b46ba1fe6d68c3c186,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2256054218609295557, guid: 628f963a67a953b46ba1fe6d68c3c186,
         type: 3}

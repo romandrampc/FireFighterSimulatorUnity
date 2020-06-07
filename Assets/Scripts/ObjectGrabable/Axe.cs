@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Axe : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class Axe : MonoBehaviour
     public Interactable interactable;
 
     [Tooltip("The local point which acts as a positional and rotational offset to use while held with a grip type grab")]
-    [SerializeField] internal Transform axeOffset;
+    [SerializeField] internal Transform axeOffsetR;
+    [SerializeField] internal Transform axeOffsetL;
     [SerializeField] internal Transform axePivot;
     [SerializeField] internal Transform pickAxeOffset;
     [SerializeField] internal Transform buttAxeOffset;
@@ -145,7 +147,15 @@ public class Axe : MonoBehaviour
             hand.HoverLock(interactable);
 
             // Attach this object to the hand
-            hand.AttachObject(gameObject, interactGrabType, attachmentFlags, axeOffset);
+            if (hand.handType == SteamVR_Input_Sources.LeftHand)
+            {
+                hand.AttachObject(gameObject, interactGrabType, attachmentFlags, axeOffsetL);
+            }
+            else if (hand.handType == SteamVR_Input_Sources.RightHand)
+            {
+                hand.AttachObject(gameObject, interactGrabType, attachmentFlags, axeOffsetR);
+            }
+            
 
             handGrab = hand;
             isAttachHand = true;
@@ -163,7 +173,7 @@ public class Axe : MonoBehaviour
             canDetachFromhand = false;
 
             
-            Vector3 startPointSphere = axeOffset.transform.position;
+            Vector3 startPointSphere = axeOffsetR.transform.position;
             Collider[] colliders = Physics.OverlapSphere(startPointSphere, radiusPickAxe * 3);
             foreach (Collider collider in colliders)
             {

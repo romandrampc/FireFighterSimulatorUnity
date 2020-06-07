@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2394177475989546441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8332634608698387499}
+  m_Layer: 0
+  m_Name: GripOffsetL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8332634608698387499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394177475989546441}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0.052, y: 0.011, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8140025904843107166}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1 &2966172411342082005
 GameObject:
   m_ObjectHideFlags: 0
@@ -14292,7 +14322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8140025904503499883}
   m_Layer: 0
-  m_Name: GripOffset
+  m_Name: GripOffsetR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14349,6 +14379,7 @@ Transform:
   - {fileID: 8140025905028238477}
   - {fileID: 8140025905472460940}
   - {fileID: 8140025904503499883}
+  - {fileID: 8332634608698387499}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -14418,7 +14449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachmentFlags: 44
   catchingSpeedThreshold: -1
-  gripOffset: {fileID: 8140025904503499883}
+  gripOffsetR: {fileID: 8140025904503499883}
+  gripOffsetL: {fileID: 8332634608698387499}
   interactable: {fileID: 0}
   foam: {fileID: 2966172412185557880}
   pivotHose: {fileID: 8140025905028238482}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -56,7 +57,14 @@ public class PlayerInventory : MonoBehaviour
                 Interactable axeInteractable = axeCreate.GetComponent<Interactable>();
 
                 hand.HoverLock(axeInteractable);
-                hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffset);
+                if (hand.handType == SteamVR_Input_Sources.LeftHand)
+                {
+                    hand.AttachObject(gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetL);
+                }
+                else if (hand.handType == SteamVR_Input_Sources.RightHand)
+                {
+                    hand.AttachObject(gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetR);
+                }
 
                 axeScript.handGrab = hand;
                 axeScript.isAttachHand = true;
