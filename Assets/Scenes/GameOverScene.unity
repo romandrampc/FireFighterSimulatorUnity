@@ -471,6 +471,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.6509434
       objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.73333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242954, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -594,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Name
-      value: btn_Tutorial (2)
+      value: btn_MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -640,8 +650,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 2
-  panelImage: {fileID: 0}
-  TargetColor: {r: 0, g: 0, b: 0, a: 0}
+  panelImage: {fileID: 976526490}
+  TargetColor: {r: 0, g: 0.9137255, b: 1, a: 0.78431374}
 --- !u!65 &976526489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -655,6 +665,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1211.369, y: 362.74, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &976526490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+    type: 3}
+  m_PrefabInstance: {fileID: 976526486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1201286715
 GameObject:
   m_ObjectHideFlags: 0

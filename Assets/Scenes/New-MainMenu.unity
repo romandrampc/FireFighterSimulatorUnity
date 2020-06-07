@@ -5589,7 +5589,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Name
-      value: btn_Tutorial (3)
+      value: btn_FireExtinTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -5918,7 +5918,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Name
-      value: btn_Tutorial (1)
+      value: btn_FireEscapeTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -11333,7 +11333,7 @@ MonoBehaviour:
       m_Calls: []
   modeGame: 0
   panelImage: {fileID: 1598251423}
-  TargetColor: {r: 0.16470589, g: 0.99215686, b: 0.9137255, a: 0.78431374}
+  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0.78431374}
 --- !u!65 &1316633109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13950,7 +13950,7 @@ PrefabInstance:
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Name
-      value: btn_Tutorial (2)
+      value: btn_FireEscape
       objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
@@ -17488,7 +17488,7 @@ MonoBehaviour:
       m_Calls: []
   modeGame: 1
   panelImage: {fileID: 566507300}
-  TargetColor: {r: 0.16470589, g: 0.99215686, b: 0.9137255, a: 0.78431374}
+  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0.78431374}
 --- !u!65 &2047248952
 BoxCollider:
   m_ObjectHideFlags: 0

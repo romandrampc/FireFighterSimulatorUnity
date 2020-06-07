@@ -1944,8 +1944,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 2
-  panelImage: {fileID: 0}
-  TargetColor: {r: 0, g: 0, b: 0, a: 0}
+  panelImage: {fileID: 1200121045}
+  TargetColor: {r: 1, g: 0, b: 0, a: 0.9607843}
 --- !u!65 &1200121044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1959,6 +1959,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1211.369, y: 362.74, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1200121045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1200121041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1453687415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2213,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.73333335
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2370,8 +2402,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 0
-  panelImage: {fileID: 0}
-  TargetColor: {r: 0, g: 0, b: 0, a: 0}
+  panelImage: {fileID: 1588750726}
+  TargetColor: {r: 1, g: 0, b: 0, a: 0.9607843}
 --- !u!65 &1588750725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2385,6 +2417,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1211.369, y: 362.74, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1588750726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1588750722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631857099
 GameObject:
   m_ObjectHideFlags: 0
