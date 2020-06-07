@@ -813,6 +813,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -3174,6 +3179,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -5882,6 +5892,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -13365,6 +13380,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -25846,6 +25866,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireNew-v2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -31144,6 +31169,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: gameObjectToDestroy

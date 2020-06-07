@@ -13,6 +13,7 @@ TagManager:
   - Elevator
   - Door
   - SmashObject
+  - UIRayCast
   layers:
   - Default
   - TransparentFX

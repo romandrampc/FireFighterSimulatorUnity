@@ -2970,6 +2970,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -4933,6 +4938,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -10210,6 +10225,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b76ff9abe71c0142b81ab2e42d6ae4a, type: 3}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -12709,6 +12729,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa2360f694a6cf4493c63e389f17fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireZone1: {fileID: 0}
+  DoorLock: {fileID: 0}
+  goalZone1: 3
+  desk1: {fileID: 0}
+  desk2: {fileID: 0}
+  BlockingTeleportPart: {fileID: 0}
+  goalZone2: 1
 --- !u!114 &1303893562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12721,6 +12748,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7913a14ac30b0b246adfae393a3165d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireZone1: {fileID: 0}
+  DoorLock: {fileID: 0}
+  goalZone1: 3
+  desk1: {fileID: 0}
+  desk2: {fileID: 0}
+  BlockingTeleportPart: {fileID: 0}
+  goalZone2: 1
+  alarmButton_Z1: {fileID: 0}
+  firePlug1_Z2: {fileID: 0}
+  fireBook1_Z2: {fileID: 0}
+  fireBook2_Z2: {fileID: 0}
+  fireBook1_Z3: {fileID: 0}
+  fireBook2_Z3: {fileID: 0}
+  UITutorial: []
 --- !u!114 &1303893563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12734,9 +12775,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeGame: 3
+  elevatorArea: TeleportAreaRoomZone3_5_Elevetor
+  exitArea: TeleportAreaRoomZone4_Exit
+  timeForSurvive: 120
   mainMenuSceneName: New-MainMenu
   playSceneName: OfficeV3
   fireExtinSceneName: OfficeTrainFireExtinguisher
+  scoreSceneName: 
+  gameOverSceneName: 
 --- !u!4 &1303893564
 Transform:
   m_ObjectHideFlags: 0

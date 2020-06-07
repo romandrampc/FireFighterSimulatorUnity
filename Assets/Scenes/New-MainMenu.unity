@@ -5466,6 +5466,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1525609389}
     m_Modifications:
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5576,6 +5591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_Tutorial (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_TagString
+      value: UIRayCast
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Text
@@ -5607,6 +5627,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 3
+  panelImage: {fileID: 534607280}
+  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0}
 --- !u!224 &534607278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1018543501079244502, guid: 45a87bbd09881714fbe341b40e77560a,
@@ -5626,6 +5648,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1211.369, y: 362.74, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &534607280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+    type: 3}
+  m_PrefabInstance: {fileID: 534607275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548774488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5886,6 +5920,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_Tutorial (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_TagString
+      value: UIRayCast
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Text
@@ -5901,6 +5940,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 566507298}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &566507300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+    type: 3}
+  m_PrefabInstance: {fileID: 566507298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596716358
 GameObject:
   m_ObjectHideFlags: 0
@@ -11281,6 +11332,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 0
+  panelImage: {fileID: 1598251423}
+  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0}
 --- !u!65 &1316633109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13899,6 +13952,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_Tutorial (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_TagString
+      value: UIRayCast
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Text
@@ -13912,6 +13970,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1598251421}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1598251423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018543500212242952, guid: 45a87bbd09881714fbe341b40e77560a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1598251421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1602729097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17417,6 +17487,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 1
+  panelImage: {fileID: 566507300}
+  TargetColor: {r: 0.9607843, g: 1, b: 0.3764706, a: 0}
 --- !u!65 &2047248952
 BoxCollider:
   m_ObjectHideFlags: 0

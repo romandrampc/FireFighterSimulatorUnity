@@ -22,6 +22,8 @@ public class RayForMainMenu : MonoBehaviour
 
     Ray shootRay;
 
+    GameObject shootHitObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,19 @@ public class RayForMainMenu : MonoBehaviour
                 if (grabPinchAction.GetStateDown(handType))
                 {
                     shootHit.collider.gameObject.SendMessage("OnAction", SendMessageOptions.DontRequireReceiver);
+                }
+                
+                if (shootHit.collider.CompareTag("UIRayCast"))
+                {
+                    shootHit.collider.gameObject.SendMessage("OnHighlight", SendMessageOptions.DontRequireReceiver);
+
+                    shootHitObj = shootHit.collider.gameObject;
+                }
+                else if (shootHitObj != null)
+                {
+                    shootHitObj.SendMessage("OnDisHighlight", SendMessageOptions.DontRequireReceiver);
+
+                    shootHitObj = null;
                 }
             }
             else

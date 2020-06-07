@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class VRRayButton : MonoBehaviour
 {
@@ -11,11 +12,18 @@ public class VRRayButton : MonoBehaviour
 
     [SerializeField] ModeGame modeGame;
 
+    [Header("Setting Highlight")]
+    [SerializeField] Image panelImage;
 
+    [SerializeField] Color TargetColor;
+
+    Color originalColor;
+    
     private void Start()
     {
         sceneController = SceneController.instanceScene;
 
+        originalColor = panelImage.color;
         if (modeGame == ModeGame.Survivor)
         {
             callBack.AddListener(sceneController.LoadSurvivorScene);
@@ -41,5 +49,14 @@ public class VRRayButton : MonoBehaviour
             callBack.Invoke();
         }
     }
-    
+
+    internal void OnHighlight()
+    {
+        panelImage.color = TargetColor;
+    }
+
+    internal void OnDisHighlight()
+    {
+        panelImage.color = originalColor;
+    }
 }

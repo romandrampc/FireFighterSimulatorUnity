@@ -38,6 +38,7 @@ public class Axe : MonoBehaviour
     [SerializeField] float radiusPickAxe = 0.1f;
     [SerializeField] float minDegreeSmash = 80.0f;
     [SerializeField] float maxDegreeSmash = 100.0f;
+    [SerializeField] AudioSource audioSrc;
 
     Vector3 StartPointButtAxe = Vector3.zero;
     Vector3 StartPointPickAxe = Vector3.zero;
@@ -90,6 +91,8 @@ public class Axe : MonoBehaviour
             {
                 // this part to destroy object that 
                 collider.gameObject.SetActive(false);
+                if (!audioSrc.isPlaying)
+                    audioSrc.Play();
             }
         }
     }

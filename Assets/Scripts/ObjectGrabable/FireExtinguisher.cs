@@ -37,6 +37,7 @@ public class FireExtinguisher : MonoBehaviour
 	[SerializeField] float damageFire = 20.0f;
 	[SerializeField] float radius;
 	[SerializeField] float range;
+    [SerializeField] AudioSource fireExtinguisherAudio;
 	
 
 	Vector3 startPoint = Vector3.zero;
@@ -133,6 +134,7 @@ public class FireExtinguisher : MonoBehaviour
         if (!foam.isPlaying)
         {
             foam.Play();
+            fireExtinguisherAudio.Play();
         }
 		
 	}
@@ -140,6 +142,7 @@ public class FireExtinguisher : MonoBehaviour
 	public void StopParticle()
 	{
 		foam.Stop();
+        fireExtinguisherAudio.Stop();
 	}
 
     private void DouseToFire()

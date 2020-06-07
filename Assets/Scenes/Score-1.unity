@@ -1900,6 +1900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_TagString
+      value: UIRayCast
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Text
@@ -1939,6 +1944,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 2
+  panelImage: {fileID: 0}
+  TargetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1200121044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2319,6 +2326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_Tryagain
       objectReference: {fileID: 0}
+    - target: {fileID: 1018543501079244506, guid: 45a87bbd09881714fbe341b40e77560a,
+        type: 3}
+      propertyPath: m_TagString
+      value: UIRayCast
+      objectReference: {fileID: 0}
     - target: {fileID: 1018543501209795798, guid: 45a87bbd09881714fbe341b40e77560a,
         type: 3}
       propertyPath: m_Text
@@ -2358,6 +2370,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   modeGame: 0
+  panelImage: {fileID: 0}
+  TargetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1588750725
 BoxCollider:
   m_ObjectHideFlags: 0
