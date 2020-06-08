@@ -57,15 +57,15 @@ public class PlayerInventory : MonoBehaviour
                 Interactable axeInteractable = axeCreate.GetComponent<Interactable>();
 
                 hand.HoverLock(axeInteractable);
-                //if (hand.handType == SteamVR_Input_Sources.LeftHand)
-                //{
-                //    hand.AttachObject(gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetL);
-                //}
-                //else if (hand.handType == SteamVR_Input_Sources.RightHand)
-                //{
-                //    hand.AttachObject(gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetR);
-                //}
-                hand.AttachObject(gameObject, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetR);
+                if (hand.handType == SteamVR_Input_Sources.LeftHand)
+                {
+                    hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetL);
+                }
+                else if (hand.handType == SteamVR_Input_Sources.RightHand)
+                {
+                    hand.AttachObject(axeCreate, interactGrabType, axeScript.attachmentFlags, axeScript.axeOffsetR);
+                }
+
                 axeScript.handGrab = hand;
                 axeScript.isAttachHand = true;
                 axeScript.canDetachFromhand = true;
