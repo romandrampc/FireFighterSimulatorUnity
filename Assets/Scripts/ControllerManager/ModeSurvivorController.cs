@@ -62,7 +62,8 @@ public class ModeSurvivorController : MonoBehaviour
 
         foreach (GameObject ui in UITutorial)
         {
-            ui.SetActive(false);
+            if (ui.activeInHierarchy)
+                ui.SetActive(false);
         }
     }
     // Start is called before the first frame update
@@ -74,6 +75,11 @@ public class ModeSurvivorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (GameObject ui in UITutorial)
+        {
+            if (ui.activeInHierarchy)
+                ui.SetActive(false);
+        }
         #region Quest Zone1
 
         Debug.Log("1." +!FireZone1.activeInHierarchy);
