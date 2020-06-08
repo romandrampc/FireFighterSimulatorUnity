@@ -22,7 +22,8 @@ public class ModeTrainingController : MonoBehaviour
     int progessZone2 = 0;
     [SerializeField] int goalZone2 = 1;
 
-
+    [Header("UI Array")]
+    [SerializeField] GameObject[] UITutorial;
 
     private void Awake()
     {
@@ -39,6 +40,11 @@ public class ModeTrainingController : MonoBehaviour
     private void OnEnable()
     {
         gameController = GameController.instanceGame;
+
+        foreach (GameObject ui in UITutorial)
+        {
+            ui.SetActive(true);
+        }
     }
 
     // Start is called before the first frame update

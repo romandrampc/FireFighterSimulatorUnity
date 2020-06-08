@@ -8245,6 +8245,13 @@ MonoBehaviour:
   desk2: {fileID: 609873561}
   BlockingTeleportPart: {fileID: 1666124941}
   goalZone2: 1
+  UITutorial:
+  - {fileID: 881339241}
+  - {fileID: 3283193911647094209}
+  - {fileID: 1159592918}
+  - {fileID: 447974038}
+  - {fileID: 1724040348}
+  - {fileID: 1502517456}
 --- !u!4 &572296762
 Transform:
   m_ObjectHideFlags: 0
