@@ -51,8 +51,8 @@ public class UIShowDoorTemperature : MonoBehaviour
     void RandomCelcius()
     {
         temperatureValue = Random.Range(minTemperature, maxTemperature);
-        txtTemperature.text = temperatureValue.ToString();
-        Invoke("RandomCelcius", 0.8f);
+        txtTemperature.text = temperatureValue.ToString("f2");
+        Invoke("RandomCelcius", 2.0f);
     }
 
     void CheckAngle()
