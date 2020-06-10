@@ -13288,6 +13288,7 @@ MonoBehaviour:
   fireExtinSceneName: OfficeTrainFireExtinguisher
   scoreSceneName: Score-1
   gameOverSceneName: GameOverScene
+  questCompleteSceneName: QuestCompleteScene
 --- !u!4 &1490125771
 Transform:
   m_ObjectHideFlags: 0

@@ -62,6 +62,7 @@ public class GameController : MonoBehaviour
     [SerializeField] internal string fireExtinSceneName;
     [SerializeField] internal string scoreSceneName;
     [SerializeField] internal string gameOverSceneName;
+    [SerializeField] internal string questCompleteSceneName;
     #endregion
 
     #region Score Part
@@ -196,7 +197,7 @@ public class GameController : MonoBehaviour
             }
             else if (modeGame == ModeGame.Training)
             {
-                SceneController.instanceScene.LoadMainMenu();
+                SceneController.instanceScene.Invoke("LoadQuestComplete", 2.0f);
             }
         }
     }
@@ -215,7 +216,7 @@ public class GameController : MonoBehaviour
 
     void waitBeforeLoad()
     {
-        SceneController.instanceScene.LoadMainMenu();
+        SceneController.instanceScene.LoadQuestComplete();
     }
 
     private IEnumerator WaitForCalculate(float waitTime)

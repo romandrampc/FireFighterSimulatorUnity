@@ -66,4 +66,10 @@ public class SceneController : MonoBehaviour
         gameController.modeGame = ModeGame.MainMenu;
         SceneManager.LoadScene(gameController.gameOverSceneName);
     }
+
+    public void LoadQuestComplete()
+    {
+        gameController.modeGame = ModeGame.MainMenu;
+        SceneManager.LoadScene(gameController.questCompleteSceneName);
+    }
 }
