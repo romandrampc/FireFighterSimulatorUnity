@@ -2980,6 +2980,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -4976,6 +4981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Volume
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
@@ -10264,6 +10274,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2815997917122477468, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7911484174351371472, guid: 1763b7e0f0b1f004da51c07f24e81e0e,
         type: 3}
       propertyPath: typeOfFlames
@@ -12770,6 +12785,7 @@ MonoBehaviour:
   desk2: {fileID: 0}
   BlockingTeleportPart: {fileID: 0}
   goalZone2: 1
+  UITutorial: []
 --- !u!114 &1303893562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12817,6 +12833,7 @@ MonoBehaviour:
   fireExtinSceneName: OfficeTrainFireExtinguisher
   scoreSceneName: 
   gameOverSceneName: 
+  questCompleteSceneName: 
 --- !u!4 &1303893564
 Transform:
   m_ObjectHideFlags: 0
