@@ -210,6 +210,11 @@ public class GameController : MonoBehaviour
     internal void OnDousedFire()
     {
         wasAddFireExtinTrain = false;
+        Invoke("waitBeforeLoad", 3.0f);
+    }
+
+    void waitBeforeLoad()
+    {
         SceneController.instanceScene.LoadMainMenu();
     }
 

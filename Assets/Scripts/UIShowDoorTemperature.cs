@@ -18,7 +18,7 @@ public class UIShowDoorTemperature : MonoBehaviour
     [SerializeField] float minTemperature =85.00f;
     [SerializeField] float maxTemperature = 92.00f;
 
-    float temperatureValue;
+    int temperatureValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,9 +50,9 @@ public class UIShowDoorTemperature : MonoBehaviour
 
     void RandomCelcius()
     {
-        temperatureValue = Random.Range(minTemperature, maxTemperature);
-        txtTemperature.text = temperatureValue.ToString("f2");
-        Invoke("RandomCelcius", 2.0f);
+        temperatureValue = Mathf.RoundToInt( Random.Range(minTemperature, maxTemperature) );
+        txtTemperature.text = temperatureValue.ToString();
+        Invoke("RandomCelcius", 4.0f);
     }
 
     void CheckAngle()

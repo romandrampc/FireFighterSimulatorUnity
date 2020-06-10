@@ -28,11 +28,12 @@ public class SoundController : MonoBehaviour
         }
     }
 
-    public void AudioPlay(AudioClip clip,float volume)
+    public void AudioPlay(AudioClip clip,float volume,bool isLoop)
     {
         Debug.Log("Test2");
         AudioSource tempSoundEffect = new GameObject().AddComponent<AudioSource>();
         tempSoundEffect.volume = volume;
+        tempSoundEffect.loop = isLoop;
         listOfAudioSource.Add(tempSoundEffect);
         tempSoundEffect.clip = clip;
         if (!tempSoundEffect.isPlaying)
